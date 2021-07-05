@@ -29,7 +29,8 @@ type KnowledgeBase = [Formula]
 
 -- | Show instance of form
 instance Show Formula where
-  show (Const b    ) = show b
+  show (Const True ) = "⊤"
+  show (Const False) = "⊥"
   show (Atom  s    ) = show s
   show (Not   p    ) = "(" ++ "¬" ++ show p ++ ")"
   show (And     p q) = "(" ++ show p ++ "∧" ++ show q ++ ")"
