@@ -31,11 +31,11 @@ type KnowledgeBase = [Formula]
 instance Show Formula where
   show (Const b    ) = show b
   show (Atom  s    ) = show s
-  show (Not   p    ) = "¬" ++ show p
-  show (And     p q) = show p ++ "∧" ++ show q
-  show (Or      p q) = show p ++ "∨" ++ show q
-  show (Implies p q) = show p ++ "→" ++ show q
-  show (Iff     p q) = show p ++ "↔" ++ show q
+  show (Not   p    ) = "(" ++ "¬" ++ show p ++ ")"
+  show (And     p q) = "(" ++ show p ++ "∧" ++ show q ++ ")"
+  show (Or      p q) = "(" ++ show p ++ "∨" ++ show q ++ ")"
+  show (Implies p q) = "(" ++ show p ++ "→" ++ show q ++ ")"
+  show (Iff     p q) = "(" ++ show p ++ "↔" ++ show q ++ ")"
 
 {- Potentially useful, not sure at the moment
 -- | Eq instance of form
