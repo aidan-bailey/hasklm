@@ -53,7 +53,7 @@ extra-source-files:  CHANGELOG.md
 
 library
   -- Modules exported by the library.
-  exposed-modules:     MyLib PropositionalTypes
+  exposed-modules:     MyLib PropositionalTypes PropositionalParser
 
   -- Modules included in this library but not exported.
   other-modules:
