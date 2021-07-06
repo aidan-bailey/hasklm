@@ -1,0 +1,49 @@
+name: hasklm
+version: 0.1.0.0
+github: "aidanjbailey/hasklm"
+license: GPL-3
+author: "Aidan Bailey"
+maintainer: "BLYAID001@myuct.ac.za"
+copyright: "Aidan Bailey"
+
+extra-source-files:
+  - README.md
+  - LICENSE
+
+# Metadata used when publishing your package
+synopsis: KLM-style defeasible reasoning implementation written in Haskell
+category: AI
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+# description: Please see the README on GitHub at <https://github.com/githubuser/hasklm#readme>
+
+dependencies:
+  - base >= 4.7 && < 5
+  - parsec
+
+library:
+  source-dirs: lib
+
+executables:
+  hasklm-exe:
+    main: Main.hs
+    source-dirs: app
+    ghc-options:
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+    dependencies:
+      - hasklm
+
+tests:
+  hasklm-test:
+    main: MyLibTest.hs
+    source-dirs: test
+    ghc-options:
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+    dependencies:
+      - hasklm
