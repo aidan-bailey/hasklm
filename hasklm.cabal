@@ -26,7 +26,7 @@ source-repository head
 
 library
   exposed-modules:
-      Lib
+      MyLib
       PropositionalHelpers
       PropositionalLogic
       PropositionalParser
@@ -55,7 +55,7 @@ executable hasklm-exe
 
 test-suite hasklm-test
   type: exitcode-stdio-1.0
-  main-is: MyTestLib.hs
+  main-is: MyLibTest.hs
   other-modules:
       Paths_hasklm
   hs-source-dirs:
