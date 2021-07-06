@@ -92,6 +92,7 @@ parseString str = case parse propositionalParser "" str of
   Left  e -> error $ show e
   Right r -> r
 
+{-
 -- | parseFile function parses a file into a logical formula (untested)
 parseFile :: String -> IO Formula
 parseFile file = do
@@ -99,3 +100,4 @@ parseFile file = do
   case parse propositionalParser "" program of
     Left  e -> print e >> fail "parse error"
     Right r -> return r
+-}
