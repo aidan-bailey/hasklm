@@ -38,7 +38,6 @@ instance Show Formula where
   show (Implies p q) = "(" ++ show p ++ "→" ++ show q ++ ")"
   show (Iff     p q) = "(" ++ show p ++ "↔" ++ show q ++ ")"
 
-{- Potentially useful, not sure at the moment
 -- | Eq instance of form
 instance Eq Formula where
   (==) (Atom s1    ) (Atom s2    ) = s1 == s2
@@ -48,4 +47,3 @@ instance Eq Formula where
   (==) (Implies p q) (Implies r s) = p == r && q == s
   (==) (Iff     p q) (Iff     r s) = p == r && q == s || p == s && q == r
   (==) _             _             = False
--}
