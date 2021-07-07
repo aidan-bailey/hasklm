@@ -36,7 +36,8 @@ valuations :: KnowledgeBase -> [Valuation]
 valuations kb = [ zip atomNames bools | bools <- boolPerms ]
  where
   atomNames       = removeDuplicates [ n | p <- kb, n <- atoms p ]
-  valuationsCount = length atomNames ^ 2
+  atomCount       = length atomNames
+  valuationsCount = if atomCount == 1 then 2 else length atomNames ^ 2
   boolPerms =
     reverse [ int2bool i valuationsCount | i <- [0 .. valuationsCount - 1] ]
 
