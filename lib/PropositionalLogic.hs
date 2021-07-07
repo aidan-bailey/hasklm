@@ -32,31 +32,29 @@ satisfies v (Implies p q) = satisfies v p <= satisfies v q
 satisfies v (Iff     p q) = satisfies v p == satisfies v q
 
 -- | valuations function generates all possible valuations for a formula
-valuations :: Formula -> [Valuation]
-valuations p = [ zip atomNames bools | bools <- boolPerms ]
+valuations :: KnowledgeBase -> [Valuation]
+valuations kb = [ zip atomNames bools | bools <- boolPerms ]
  where
-  atomNames       = removeDuplicates (atoms p)
-  valuationsCount = length atomNames * 2
+  atomNames       = removeDuplicates [ n | p <- kb, n <- atoms p ]
+  valuationsCount = (length atomNames) ^ 2
   boolPerms =
-    reverse [ int2bool i valuationsCount | i <- [0 .. valuationsCount] ]
+    reverse [ int2bool i valuationsCount | i <- [0 .. valuationsCount - 1] ]
 
 -- | isValid function checks if a given formula is valid
 isValid :: Formula -> Bool
 isValid p = length (filter (`satisfies` p) valuationsList)
   == length valuationsList
-  where valuationsList = valuations p
+  where valuationsList = valuations [p]
 
 -- | models function returns the models for given formula
 models :: KnowledgeBase -> [Valuation]
 models [] = []
-models kb =
-  [ v | v <- valuations (head kb), and [ v `satisfies` p | p <- kb ] ]
+models kb = [ v | v <- valuations kb, and [ v `satisfies` p | p <- kb ] ]
 
 -- | entails function checks if a knowledge base entails a formula
 entails :: KnowledgeBase -> Formula -> Bool
 entails [] p = isValid p
-entails (q : kb) p | null kb   = [q] `entails` p
-                   | otherwise = [q] `entails` p && kb `entails` p
+entails kb p = models kb `subsumes4` models [p]
 
 -- | str2form function converts a string to a formula
 str2form :: String -> Formula
