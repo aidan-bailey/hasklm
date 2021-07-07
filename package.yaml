@@ -25,12 +25,12 @@ dependencies:
 
 library:
   source-dirs: src
-  exposed-modules: PropositionalLogic DefeasibleLogic
-  other-modules: DefeasibleHelpers
-    DefeasibleTypes
-    PropositionalHelpers
-    PropositionalParser
-    PropositionalTypes
+#  exposed-modules: PropositionalLogic DefeasibleLogic
+#  other-modules: DefeasibleHelpers
+#    DefeasibleTypes
+#    PropositionalHelpers
+#    PropositionalParser
+#    PropositionalTypes
 
 tests:
   hasklm-test:
