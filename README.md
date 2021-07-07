@@ -76,7 +76,7 @@ print (entailsRC jkb defQuery)
 9. If the above outputted `True`, all is well, and we have concluded a penguin is still a bird. For interest sake, we will define another defeasible query.
 
 ```haskell
-let defQuery2 = typically (str2form "penguin Implies wing")
+let defQuery2 = typically (str2form "penguin Implies wings")
 ```
 
 10. Execute and print as before.
