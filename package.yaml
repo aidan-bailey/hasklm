@@ -7,8 +7,8 @@ maintainer: "BLYAID001@myuct.ac.za"
 copyright: "Aidan Bailey"
 
 extra-source-files:
-  - README.md
   - LICENSE
+#  - README.md
 
 # Metadata used when publishing your package
 synopsis: KLM-style defeasible reasoning implementation written in Haskell
