@@ -1,6 +1,6 @@
 # HasKLM
 
-`Hasklm` is a Haskell based implementation of defeasible entailment using the [KLM-approach](https://open.uct.ac.za/handle/11427/32743?show=full).
+`Hasklm` is a Haskell based implementation of defeasible entailment checking using the [KLM-approach](https://open.uct.ac.za/handle/11427/32743?show=full).
 
 Checkout the [docs](https://github.com/aidanjbailey/hasklm/tree/master/docs) for all currently available functionality.
 
