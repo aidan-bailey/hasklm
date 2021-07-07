@@ -21,7 +21,7 @@ assigns [] _ = error "Atom not found in given valuation"
 assigns ((a, b) : ve) n | n == a    = b
                         | otherwise = assigns ve n
 
--- | The 'satisfies' function evaluates a 'Formula' for the given 'Valuation'.
+-- | The 'satisfies' function evaluates the given 'Formula' for the given 'Valuation'.
 satisfies :: Valuation -> Formula -> Bool
 satisfies _ (Const b    ) = b
 satisfies v (Atom  n    ) = assigns v n

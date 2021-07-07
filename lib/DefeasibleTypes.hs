@@ -3,21 +3,22 @@ module DefeasibleTypes where
 
 import           PropositionalTypes
 
--- | Defeasible implication type
+-- | The 'DefeasibleImplication' type encodes a typical consequence relation.
 data DefeasibleImplication = Typically Formula Formula
 
--- | State type
+-- | The 'State' type encodes a preferential 'State'.
 type State = [Formula]
 
--- | Ranked models type
+-- | The 'RankedModels' type encodes preferentially ranked models.
 type RankedModels = [State]
 
--- | Defeasible knowledge base type
+-- | The 'DefeasibleKnowledgeBase' type encodes a defeasible knowledge base.
 type DefeasibleKnowledgeBase = [DefeasibleImplication]
 
--- | Joint knowledge base type
+-- | The 'JointKnowledgeBase' type encodes a knowledge base /
+-- defeasible knowledge base relation.
 type JointKnowledgeBase = (KnowledgeBase, DefeasibleKnowledgeBase)
 
--- | Show instance for a defeasible implication
+-- | The 'Show' instance for a 'DefeasibleImplication'.
 instance Show DefeasibleImplication where
   show (Typically p q) = show p ++ "~>" ++ show q
