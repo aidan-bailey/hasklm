@@ -2,7 +2,7 @@
 
 `Hasklm` is a Haskell based implementation of defeasible entailment using the [KLM-approach](https://open.uct.ac.za/handle/11427/32743?show=full).
 
-Checkout the [docs](https://github.com/aidanjbailey/hasklm/tree/master/docs/index.html) for all currently available functionality.
+Checkout the [docs](https://github.com/aidanjbailey/hasklm/tree/master/docs) for all currently available functionality.
 
 [Stack](https://docs.haskellstack.org/en/stable/README/) is the only dependency as it is the project's build tool.
 
