@@ -1,0 +1,265 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><link rel="stylesheet" type="text/css" href="style.css" /><script type="text/javascript" src="highlight.js"></script></head><body><pre><span class="hs-comment">-- | Propositional logic module</span><span>
+</span><span id="line-2"></span><span class="hs-keyword">module</span><span> </span><span class="hs-identifier">PropositionalLogic</span><span> </span><span class="hs-keyword">where</span><span>
+</span><span id="line-3"></span><span>
+</span><span id="line-4"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><a href="PropositionalHelpers.html"><span class="hs-identifier">PropositionalHelpers</span></a></span><span>
+</span><span id="line-5"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><a href="PropositionalParser.html"><span class="hs-identifier">PropositionalParser</span></a></span><span>
+</span><span id="line-6"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><a href="PropositionalTypes.html"><span class="hs-identifier">PropositionalTypes</span></a></span><span>
+</span><span id="line-7"></span><span>
+</span><span id="line-8"></span><span class="hs-comment">-- | The 'atoms' function returns an 'Atom' 'Name' list for the given `Formula`.</span><span>
+</span><span id="line-9"></span><span class="annot"><a href="PropositionalLogic.html#atoms"><span class="hs-identifier hs-type">atoms</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="PropositionalTypes.html#Formula"><span class="hs-identifier hs-type">Formula</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><span class="annot"><a href="PropositionalTypes.html#Name"><span class="hs-identifier hs-type">Name</span></a></span><span class="hs-special">]</span><span>
+</span><span id="line-10"></span><span id="atoms"><span class="annot"><span class="annottext">atoms :: Formula -&gt; [Name]
+</span><a href="PropositionalLogic.html#atoms"><span class="hs-identifier hs-var hs-var">atoms</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="PropositionalTypes.html#Const"><span class="hs-identifier hs-type">Const</span></a></span><span> </span><span class="annot"><span class="annottext">Bool
+</span><span class="hs-identifier">_</span></span><span>    </span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span>
+</span><span id="line-11"></span><span class="annot"><a href="PropositionalLogic.html#atoms"><span class="hs-identifier hs-var">atoms</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="PropositionalTypes.html#Atom"><span class="hs-identifier hs-type">Atom</span></a></span><span>  </span><span id="local-6989586621679040219"><span class="annot"><span class="annottext">Name
+</span><a href="#local-6989586621679040219"><span class="hs-identifier hs-var">x</span></a></span></span><span>    </span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">Name
+</span><a href="#local-6989586621679040219"><span class="hs-identifier hs-var">x</span></a></span><span class="hs-special">]</span><span>
+</span><span id="line-12"></span><span class="annot"><a href="PropositionalLogic.html#atoms"><span class="hs-identifier hs-var">atoms</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="PropositionalTypes.html#Not"><span class="hs-identifier hs-type">Not</span></a></span><span>   </span><span id="local-6989586621679040217"><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040217"><span class="hs-identifier hs-var">p</span></a></span></span><span>    </span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Formula -&gt; [Name]
+</span><a href="PropositionalLogic.html#atoms"><span class="hs-identifier hs-var">atoms</span></a></span><span> </span><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040217"><span class="hs-identifier hs-var">p</span></a></span><span>
+</span><span id="line-13"></span><span class="annot"><a href="PropositionalLogic.html#atoms"><span class="hs-identifier hs-var">atoms</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="PropositionalTypes.html#And"><span class="hs-identifier hs-type">And</span></a></span><span>     </span><span id="local-6989586621679040215"><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040215"><span class="hs-identifier hs-var">p</span></a></span></span><span> </span><span id="local-6989586621679040214"><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040214"><span class="hs-identifier hs-var">q</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Formula -&gt; [Name]
+</span><a href="PropositionalLogic.html#atoms"><span class="hs-identifier hs-var">atoms</span></a></span><span> </span><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040215"><span class="hs-identifier hs-var">p</span></a></span><span> </span><span class="annot"><span class="annottext">[Name] -&gt; [Name] -&gt; [Name]
+forall a. [a] -&gt; [a] -&gt; [a]
+</span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">Formula -&gt; [Name]
+</span><a href="PropositionalLogic.html#atoms"><span class="hs-identifier hs-var">atoms</span></a></span><span> </span><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040214"><span class="hs-identifier hs-var">q</span></a></span><span>
+</span><span id="line-14"></span><span class="annot"><a href="PropositionalLogic.html#atoms"><span class="hs-identifier hs-var">atoms</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="PropositionalTypes.html#Or"><span class="hs-identifier hs-type">Or</span></a></span><span>      </span><span id="local-6989586621679040212"><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040212"><span class="hs-identifier hs-var">p</span></a></span></span><span> </span><span id="local-6989586621679040211"><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040211"><span class="hs-identifier hs-var">q</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Formula -&gt; [Name]
+</span><a href="PropositionalLogic.html#atoms"><span class="hs-identifier hs-var">atoms</span></a></span><span> </span><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040212"><span class="hs-identifier hs-var">p</span></a></span><span> </span><span class="annot"><span class="annottext">[Name] -&gt; [Name] -&gt; [Name]
+forall a. [a] -&gt; [a] -&gt; [a]
+</span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">Formula -&gt; [Name]
+</span><a href="PropositionalLogic.html#atoms"><span class="hs-identifier hs-var">atoms</span></a></span><span> </span><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040211"><span class="hs-identifier hs-var">q</span></a></span><span>
+</span><span id="line-15"></span><span class="annot"><a href="PropositionalLogic.html#atoms"><span class="hs-identifier hs-var">atoms</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="PropositionalTypes.html#Implies"><span class="hs-identifier hs-type">Implies</span></a></span><span> </span><span id="local-6989586621679040209"><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040209"><span class="hs-identifier hs-var">p</span></a></span></span><span> </span><span id="local-6989586621679040208"><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040208"><span class="hs-identifier hs-var">q</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Formula -&gt; [Name]
+</span><a href="PropositionalLogic.html#atoms"><span class="hs-identifier hs-var">atoms</span></a></span><span> </span><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040209"><span class="hs-identifier hs-var">p</span></a></span><span> </span><span class="annot"><span class="annottext">[Name] -&gt; [Name] -&gt; [Name]
+forall a. [a] -&gt; [a] -&gt; [a]
+</span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">Formula -&gt; [Name]
+</span><a href="PropositionalLogic.html#atoms"><span class="hs-identifier hs-var">atoms</span></a></span><span> </span><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040208"><span class="hs-identifier hs-var">q</span></a></span><span>
+</span><span id="line-16"></span><span class="annot"><a href="PropositionalLogic.html#atoms"><span class="hs-identifier hs-var">atoms</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="PropositionalTypes.html#Iff"><span class="hs-identifier hs-type">Iff</span></a></span><span>     </span><span id="local-6989586621679040206"><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040206"><span class="hs-identifier hs-var">p</span></a></span></span><span> </span><span id="local-6989586621679040205"><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040205"><span class="hs-identifier hs-var">q</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Formula -&gt; [Name]
+</span><a href="PropositionalLogic.html#atoms"><span class="hs-identifier hs-var">atoms</span></a></span><span> </span><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040206"><span class="hs-identifier hs-var">p</span></a></span><span> </span><span class="annot"><span class="annottext">[Name] -&gt; [Name] -&gt; [Name]
+forall a. [a] -&gt; [a] -&gt; [a]
+</span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">Formula -&gt; [Name]
+</span><a href="PropositionalLogic.html#atoms"><span class="hs-identifier hs-var">atoms</span></a></span><span> </span><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040205"><span class="hs-identifier hs-var">q</span></a></span><span>
+</span><span id="line-17"></span><span>
+</span><span id="line-18"></span><span class="hs-comment">-- | The 'assigns' function returns the corresponding 'Atom' 's Boolean value for the given 'Valuation'.</span><span>
+</span><span id="line-19"></span><span class="annot"><a href="PropositionalLogic.html#assigns"><span class="hs-identifier hs-type">assigns</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="PropositionalTypes.html#Valuation"><span class="hs-identifier hs-type">Valuation</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="PropositionalTypes.html#Name"><span class="hs-identifier hs-type">Name</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Bool</span></span><span>
+</span><span id="line-20"></span><span id="assigns"><span class="annot"><span class="annottext">assigns :: Valuation -&gt; Name -&gt; Bool
+</span><a href="PropositionalLogic.html#assigns"><span class="hs-identifier hs-var hs-var">assigns</span></a></span></span><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span> </span><span class="annot"><span class="annottext">Name
+</span><span class="hs-identifier">_</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Name -&gt; Bool
+forall a. HasCallStack =&gt; Name -&gt; a
+</span><span class="hs-identifier hs-var">error</span></span><span> </span><span class="annot"><span class="annottext">Name
+</span><span class="hs-string">&quot;Atom not found in given valuation&quot;</span></span><span>
+</span><span id="line-21"></span><span class="annot"><a href="PropositionalLogic.html#assigns"><span class="hs-identifier hs-var">assigns</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-special">(</span><span id="local-6989586621679040202"><span class="annot"><span class="annottext">Name
+</span><a href="#local-6989586621679040202"><span class="hs-identifier hs-var">a</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679040201"><span class="annot"><span class="annottext">Bool
+</span><a href="#local-6989586621679040201"><span class="hs-identifier hs-var">b</span></a></span></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="hs-glyph hs-type">:</span></span><span> </span><span id="local-6989586621679040200"><span class="annot"><span class="annottext">Valuation
+</span><a href="#local-6989586621679040200"><span class="hs-identifier hs-var">ve</span></a></span></span><span class="hs-special">)</span><span> </span><span id="local-6989586621679040199"><span class="annot"><span class="annottext">Name
+</span><a href="#local-6989586621679040199"><span class="hs-identifier hs-var">n</span></a></span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Name
+</span><a href="#local-6989586621679040199"><span class="hs-identifier hs-var">n</span></a></span><span> </span><span class="annot"><span class="annottext">Name -&gt; Name -&gt; Bool
+forall a. Eq a =&gt; a -&gt; a -&gt; Bool
+</span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">Name
+</span><a href="#local-6989586621679040202"><span class="hs-identifier hs-var">a</span></a></span><span>    </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Bool
+</span><a href="#local-6989586621679040201"><span class="hs-identifier hs-var">b</span></a></span><span>
+</span><span id="line-22"></span><span>                        </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Bool
+</span><span class="hs-identifier hs-var">otherwise</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Valuation -&gt; Name -&gt; Bool
+</span><a href="PropositionalLogic.html#assigns"><span class="hs-identifier hs-var">assigns</span></a></span><span> </span><span class="annot"><span class="annottext">Valuation
+</span><a href="#local-6989586621679040200"><span class="hs-identifier hs-var">ve</span></a></span><span> </span><span class="annot"><span class="annottext">Name
+</span><a href="#local-6989586621679040199"><span class="hs-identifier hs-var">n</span></a></span><span>
+</span><span id="line-23"></span><span>
+</span><span id="line-24"></span><span class="hs-comment">-- | The 'satisfies' function evaluates the given 'Formula' for the given 'Valuation'.</span><span>
+</span><span id="line-25"></span><span class="annot"><a href="PropositionalLogic.html#satisfies"><span class="hs-identifier hs-type">satisfies</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="PropositionalTypes.html#Valuation"><span class="hs-identifier hs-type">Valuation</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="PropositionalTypes.html#Formula"><span class="hs-identifier hs-type">Formula</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Bool</span></span><span>
+</span><span id="line-26"></span><span id="satisfies"><span class="annot"><span class="annottext">satisfies :: Valuation -&gt; Formula -&gt; Bool
+</span><a href="PropositionalLogic.html#satisfies"><span class="hs-identifier hs-var hs-var">satisfies</span></a></span></span><span> </span><span class="annot"><span class="annottext">Valuation
+</span><span class="hs-identifier">_</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="PropositionalTypes.html#Const"><span class="hs-identifier hs-type">Const</span></a></span><span> </span><span id="local-6989586621679040197"><span class="annot"><span class="annottext">Bool
+</span><a href="#local-6989586621679040197"><span class="hs-identifier hs-var">b</span></a></span></span><span>    </span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Bool
+</span><a href="#local-6989586621679040197"><span class="hs-identifier hs-var">b</span></a></span><span>
+</span><span id="line-27"></span><span class="annot"><a href="PropositionalLogic.html#satisfies"><span class="hs-identifier hs-var">satisfies</span></a></span><span> </span><span id="local-6989586621679040196"><span class="annot"><span class="annottext">Valuation
+</span><a href="#local-6989586621679040196"><span class="hs-identifier hs-var">v</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="PropositionalTypes.html#Atom"><span class="hs-identifier hs-type">Atom</span></a></span><span>  </span><span id="local-6989586621679040195"><span class="annot"><span class="annottext">Name
+</span><a href="#local-6989586621679040195"><span class="hs-identifier hs-var">n</span></a></span></span><span>    </span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Valuation -&gt; Name -&gt; Bool
+</span><a href="PropositionalLogic.html#assigns"><span class="hs-identifier hs-var">assigns</span></a></span><span> </span><span class="annot"><span class="annottext">Valuation
+</span><a href="#local-6989586621679040196"><span class="hs-identifier hs-var">v</span></a></span><span> </span><span class="annot"><span class="annottext">Name
+</span><a href="#local-6989586621679040195"><span class="hs-identifier hs-var">n</span></a></span><span>
+</span><span id="line-28"></span><span class="annot"><a href="PropositionalLogic.html#satisfies"><span class="hs-identifier hs-var">satisfies</span></a></span><span> </span><span id="local-6989586621679040194"><span class="annot"><span class="annottext">Valuation
+</span><a href="#local-6989586621679040194"><span class="hs-identifier hs-var">v</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="PropositionalTypes.html#Not"><span class="hs-identifier hs-type">Not</span></a></span><span>   </span><span id="local-6989586621679040193"><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040193"><span class="hs-identifier hs-var">p</span></a></span></span><span>    </span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool
+</span><span class="hs-identifier hs-var">not</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Valuation -&gt; Formula -&gt; Bool
+</span><a href="PropositionalLogic.html#satisfies"><span class="hs-identifier hs-var">satisfies</span></a></span><span> </span><span class="annot"><span class="annottext">Valuation
+</span><a href="#local-6989586621679040194"><span class="hs-identifier hs-var">v</span></a></span><span> </span><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040193"><span class="hs-identifier hs-var">p</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-29"></span><span class="annot"><a href="PropositionalLogic.html#satisfies"><span class="hs-identifier hs-var">satisfies</span></a></span><span> </span><span id="local-6989586621679040191"><span class="annot"><span class="annottext">Valuation
+</span><a href="#local-6989586621679040191"><span class="hs-identifier hs-var">v</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="PropositionalTypes.html#And"><span class="hs-identifier hs-type">And</span></a></span><span>     </span><span id="local-6989586621679040190"><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040190"><span class="hs-identifier hs-var">p</span></a></span></span><span> </span><span id="local-6989586621679040189"><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040189"><span class="hs-identifier hs-var">q</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Valuation -&gt; Formula -&gt; Bool
+</span><a href="PropositionalLogic.html#satisfies"><span class="hs-identifier hs-var">satisfies</span></a></span><span> </span><span class="annot"><span class="annottext">Valuation
+</span><a href="#local-6989586621679040191"><span class="hs-identifier hs-var">v</span></a></span><span> </span><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040190"><span class="hs-identifier hs-var">p</span></a></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
+</span><span class="hs-operator hs-var">&amp;&amp;</span></span><span> </span><span class="annot"><span class="annottext">Valuation -&gt; Formula -&gt; Bool
+</span><a href="PropositionalLogic.html#satisfies"><span class="hs-identifier hs-var">satisfies</span></a></span><span> </span><span class="annot"><span class="annottext">Valuation
+</span><a href="#local-6989586621679040191"><span class="hs-identifier hs-var">v</span></a></span><span> </span><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040189"><span class="hs-identifier hs-var">q</span></a></span><span>
+</span><span id="line-30"></span><span class="annot"><a href="PropositionalLogic.html#satisfies"><span class="hs-identifier hs-var">satisfies</span></a></span><span> </span><span id="local-6989586621679040187"><span class="annot"><span class="annottext">Valuation
+</span><a href="#local-6989586621679040187"><span class="hs-identifier hs-var">v</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="PropositionalTypes.html#Or"><span class="hs-identifier hs-type">Or</span></a></span><span>      </span><span id="local-6989586621679040186"><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040186"><span class="hs-identifier hs-var">p</span></a></span></span><span> </span><span id="local-6989586621679040185"><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040185"><span class="hs-identifier hs-var">q</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Valuation -&gt; Formula -&gt; Bool
+</span><a href="PropositionalLogic.html#satisfies"><span class="hs-identifier hs-var">satisfies</span></a></span><span> </span><span class="annot"><span class="annottext">Valuation
+</span><a href="#local-6989586621679040187"><span class="hs-identifier hs-var">v</span></a></span><span> </span><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040186"><span class="hs-identifier hs-var">p</span></a></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
+</span><span class="hs-operator hs-var">||</span></span><span> </span><span class="annot"><span class="annottext">Valuation -&gt; Formula -&gt; Bool
+</span><a href="PropositionalLogic.html#satisfies"><span class="hs-identifier hs-var">satisfies</span></a></span><span> </span><span class="annot"><span class="annottext">Valuation
+</span><a href="#local-6989586621679040187"><span class="hs-identifier hs-var">v</span></a></span><span> </span><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040185"><span class="hs-identifier hs-var">q</span></a></span><span>
+</span><span id="line-31"></span><span class="annot"><a href="PropositionalLogic.html#satisfies"><span class="hs-identifier hs-var">satisfies</span></a></span><span> </span><span id="local-6989586621679040183"><span class="annot"><span class="annottext">Valuation
+</span><a href="#local-6989586621679040183"><span class="hs-identifier hs-var">v</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="PropositionalTypes.html#Implies"><span class="hs-identifier hs-type">Implies</span></a></span><span> </span><span id="local-6989586621679040182"><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040182"><span class="hs-identifier hs-var">p</span></a></span></span><span> </span><span id="local-6989586621679040181"><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040181"><span class="hs-identifier hs-var">q</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Valuation -&gt; Formula -&gt; Bool
+</span><a href="PropositionalLogic.html#satisfies"><span class="hs-identifier hs-var">satisfies</span></a></span><span> </span><span class="annot"><span class="annottext">Valuation
+</span><a href="#local-6989586621679040183"><span class="hs-identifier hs-var">v</span></a></span><span> </span><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040182"><span class="hs-identifier hs-var">p</span></a></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
+forall a. Ord a =&gt; a -&gt; a -&gt; Bool
+</span><span class="hs-operator hs-var">&lt;=</span></span><span> </span><span class="annot"><span class="annottext">Valuation -&gt; Formula -&gt; Bool
+</span><a href="PropositionalLogic.html#satisfies"><span class="hs-identifier hs-var">satisfies</span></a></span><span> </span><span class="annot"><span class="annottext">Valuation
+</span><a href="#local-6989586621679040183"><span class="hs-identifier hs-var">v</span></a></span><span> </span><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040181"><span class="hs-identifier hs-var">q</span></a></span><span>
+</span><span id="line-32"></span><span class="annot"><a href="PropositionalLogic.html#satisfies"><span class="hs-identifier hs-var">satisfies</span></a></span><span> </span><span id="local-6989586621679040179"><span class="annot"><span class="annottext">Valuation
+</span><a href="#local-6989586621679040179"><span class="hs-identifier hs-var">v</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="PropositionalTypes.html#Iff"><span class="hs-identifier hs-type">Iff</span></a></span><span>     </span><span id="local-6989586621679040178"><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040178"><span class="hs-identifier hs-var">p</span></a></span></span><span> </span><span id="local-6989586621679040177"><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040177"><span class="hs-identifier hs-var">q</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Valuation -&gt; Formula -&gt; Bool
+</span><a href="PropositionalLogic.html#satisfies"><span class="hs-identifier hs-var">satisfies</span></a></span><span> </span><span class="annot"><span class="annottext">Valuation
+</span><a href="#local-6989586621679040179"><span class="hs-identifier hs-var">v</span></a></span><span> </span><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040178"><span class="hs-identifier hs-var">p</span></a></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
+forall a. Eq a =&gt; a -&gt; a -&gt; Bool
+</span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">Valuation -&gt; Formula -&gt; Bool
+</span><a href="PropositionalLogic.html#satisfies"><span class="hs-identifier hs-var">satisfies</span></a></span><span> </span><span class="annot"><span class="annottext">Valuation
+</span><a href="#local-6989586621679040179"><span class="hs-identifier hs-var">v</span></a></span><span> </span><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040177"><span class="hs-identifier hs-var">q</span></a></span><span>
+</span><span id="line-33"></span><span>
+</span><span id="line-34"></span><span class="hs-comment">-- | The 'valuations' function returns all possible 'Valuation's for the given 'KnowledgeBase'.</span><span>
+</span><span id="line-35"></span><span class="annot"><a href="PropositionalLogic.html#valuations"><span class="hs-identifier hs-type">valuations</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="PropositionalTypes.html#KnowledgeBase"><span class="hs-identifier hs-type">KnowledgeBase</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><span class="annot"><a href="PropositionalTypes.html#Valuation"><span class="hs-identifier hs-type">Valuation</span></a></span><span class="hs-special">]</span><span>
+</span><span id="line-36"></span><span id="valuations"><span class="annot"><span class="annottext">valuations :: KnowledgeBase -&gt; [Valuation]
+</span><a href="PropositionalLogic.html#valuations"><span class="hs-identifier hs-var hs-var">valuations</span></a></span></span><span> </span><span id="local-6989586621679040175"><span class="annot"><span class="annottext">KnowledgeBase
+</span><a href="#local-6989586621679040175"><span class="hs-identifier hs-var">kb</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[</span><span> </span><span class="annot"><span class="annottext">[Name] -&gt; [Bool] -&gt; Valuation
+forall a b. [a] -&gt; [b] -&gt; [(a, b)]
+</span><span class="hs-identifier hs-var">zip</span></span><span> </span><span class="annot"><span class="annottext">[Name]
+</span><a href="#local-6989586621679040174"><span class="hs-identifier hs-var">atomNames</span></a></span><span> </span><span class="annot"><span class="annottext">[Bool]
+</span><a href="#local-6989586621679040173"><span class="hs-identifier hs-var">bools</span></a></span><span> </span><span class="hs-glyph">|</span><span> </span><span id="local-6989586621679040173"><span class="annot"><span class="annottext">[Bool]
+</span><a href="#local-6989586621679040173"><span class="hs-identifier hs-var">bools</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">[[Bool]]
+</span><a href="#local-6989586621679040172"><span class="hs-identifier hs-var">boolPerms</span></a></span><span> </span><span class="hs-special">]</span><span>
+</span><span id="line-37"></span><span> </span><span class="hs-keyword">where</span><span>
+</span><span id="line-38"></span><span>  </span><span id="local-6989586621679040174"><span class="annot"><span class="annottext">atomNames :: [Name]
+</span><a href="#local-6989586621679040174"><span class="hs-identifier hs-var hs-var">atomNames</span></a></span></span><span>       </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">[Name] -&gt; [Name]
+forall a. Eq a =&gt; [a] -&gt; [a]
+</span><a href="PropositionalHelpers.html#removeDuplicates"><span class="hs-identifier hs-var">removeDuplicates</span></a></span><span> </span><span class="hs-special">[</span><span> </span><span class="annot"><span class="annottext">Name
+</span><a href="#local-6989586621679040170"><span class="hs-identifier hs-var">n</span></a></span><span> </span><span class="hs-glyph">|</span><span> </span><span id="local-6989586621679040169"><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040169"><span class="hs-identifier hs-var">p</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">KnowledgeBase
+</span><a href="#local-6989586621679040175"><span class="hs-identifier hs-var">kb</span></a></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679040170"><span class="annot"><span class="annottext">Name
+</span><a href="#local-6989586621679040170"><span class="hs-identifier hs-var">n</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Formula -&gt; [Name]
+</span><a href="PropositionalLogic.html#atoms"><span class="hs-identifier hs-var">atoms</span></a></span><span> </span><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040169"><span class="hs-identifier hs-var">p</span></a></span><span> </span><span class="hs-special">]</span><span>
+</span><span id="line-39"></span><span>  </span><span id="local-6989586621679040168"><span class="annot"><span class="annottext">atomCount :: Int
+</span><a href="#local-6989586621679040168"><span class="hs-identifier hs-var hs-var">atomCount</span></a></span></span><span>       </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">[Name] -&gt; Int
+forall (t :: * -&gt; *) a. Foldable t =&gt; t a -&gt; Int
+</span><span class="hs-identifier hs-var">length</span></span><span> </span><span class="annot"><span class="annottext">[Name]
+</span><a href="#local-6989586621679040174"><span class="hs-identifier hs-var">atomNames</span></a></span><span>
+</span><span id="line-40"></span><span>  </span><span id="local-6989586621679040166"><span class="annot"><span class="annottext">valuationsCount :: Int
+</span><a href="#local-6989586621679040166"><span class="hs-identifier hs-var hs-var">valuationsCount</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">if</span><span> </span><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679040168"><span class="hs-identifier hs-var">atomCount</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
+forall a. Eq a =&gt; a -&gt; a -&gt; Bool
+</span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">Int
+</span><span class="hs-number">1</span></span><span> </span><span class="hs-keyword">then</span><span> </span><span class="annot"><span class="annottext">Int
+</span><span class="hs-number">2</span></span><span> </span><span class="hs-keyword">else</span><span> </span><span class="annot"><span class="annottext">[Name] -&gt; Int
+forall (t :: * -&gt; *) a. Foldable t =&gt; t a -&gt; Int
+</span><span class="hs-identifier hs-var">length</span></span><span> </span><span class="annot"><span class="annottext">[Name]
+</span><a href="#local-6989586621679040174"><span class="hs-identifier hs-var">atomNames</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Integer -&gt; Int
+forall a b. (Num a, Integral b) =&gt; a -&gt; b -&gt; a
+</span><span class="hs-operator hs-var">^</span></span><span> </span><span class="annot"><span class="annottext">Integer
+</span><span class="hs-number">2</span></span><span>
+</span><span id="line-41"></span><span>  </span><span id="local-6989586621679040172"><span class="annot"><span class="annottext">boolPerms :: [[Bool]]
+</span><a href="#local-6989586621679040172"><span class="hs-identifier hs-var hs-var">boolPerms</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><span id="line-42"></span><span>    </span><span class="annot"><span class="annottext">[[Bool]] -&gt; [[Bool]]
+forall a. [a] -&gt; [a]
+</span><span class="hs-identifier hs-var">reverse</span></span><span> </span><span class="hs-special">[</span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; [Bool]
+</span><a href="PropositionalHelpers.html#int2bool"><span class="hs-identifier hs-var">int2bool</span></a></span><span> </span><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679040162"><span class="hs-identifier hs-var">i</span></a></span><span> </span><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679040166"><span class="hs-identifier hs-var">valuationsCount</span></a></span><span> </span><span class="hs-glyph">|</span><span> </span><span id="local-6989586621679040162"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679040162"><span class="hs-identifier hs-var">i</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">Int
+</span><span class="hs-number">0</span></span><span> </span><span class="hs-glyph">..</span><span> </span><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679040166"><span class="hs-identifier hs-var">valuationsCount</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
+forall a. Num a =&gt; a -&gt; a -&gt; a
+</span><span class="hs-glyph hs-var">-</span></span><span> </span><span class="annot"><span class="annottext">Int
+</span><span class="hs-number">1</span></span><span class="hs-special">]</span><span> </span><span class="hs-special">]</span><span>
+</span><span id="line-43"></span><span>
+</span><span id="line-44"></span><span class="hs-comment">-- | The 'isValid' function returns the validity of the given 'Formula'.</span><span>
+</span><span id="line-45"></span><span class="annot"><a href="PropositionalLogic.html#isValid"><span class="hs-identifier hs-type">isValid</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="PropositionalTypes.html#Formula"><span class="hs-identifier hs-type">Formula</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Bool</span></span><span>
+</span><span id="line-46"></span><span id="isValid"><span class="annot"><span class="annottext">isValid :: Formula -&gt; Bool
+</span><a href="PropositionalLogic.html#isValid"><span class="hs-identifier hs-var hs-var">isValid</span></a></span></span><span> </span><span id="local-6989586621679040160"><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040160"><span class="hs-identifier hs-var">p</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">[Valuation] -&gt; Int
+forall (t :: * -&gt; *) a. Foldable t =&gt; t a -&gt; Int
+</span><span class="hs-identifier hs-var">length</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">(Valuation -&gt; Bool) -&gt; [Valuation] -&gt; [Valuation]
+forall a. (a -&gt; Bool) -&gt; [a] -&gt; [a]
+</span><span class="hs-identifier hs-var">filter</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Valuation -&gt; Formula -&gt; Bool
+</span><a href="PropositionalLogic.html#satisfies"><span class="hs-operator hs-var">`satisfies`</span></a></span><span> </span><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040160"><span class="hs-identifier hs-var">p</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">[Valuation]
+</span><a href="#local-6989586621679040159"><span class="hs-identifier hs-var">valuationsList</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-47"></span><span>  </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
+forall a. Eq a =&gt; a -&gt; a -&gt; Bool
+</span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">[Valuation] -&gt; Int
+forall (t :: * -&gt; *) a. Foldable t =&gt; t a -&gt; Int
+</span><span class="hs-identifier hs-var">length</span></span><span> </span><span class="annot"><span class="annottext">[Valuation]
+</span><a href="#local-6989586621679040159"><span class="hs-identifier hs-var">valuationsList</span></a></span><span>
+</span><span id="line-48"></span><span>  </span><span class="hs-keyword">where</span><span> </span><span id="local-6989586621679040159"><span class="annot"><span class="annottext">valuationsList :: [Valuation]
+</span><a href="#local-6989586621679040159"><span class="hs-identifier hs-var hs-var">valuationsList</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">KnowledgeBase -&gt; [Valuation]
+</span><a href="PropositionalLogic.html#valuations"><span class="hs-identifier hs-var">valuations</span></a></span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040160"><span class="hs-identifier hs-var">p</span></a></span><span class="hs-special">]</span><span>
+</span><span id="line-49"></span><span>
+</span><span id="line-50"></span><span class="hs-comment">-- | The 'models' function returns the models (satisfying 'Valuation's) of the given `Formula`.</span><span>
+</span><span id="line-51"></span><span class="annot"><a href="PropositionalLogic.html#models"><span class="hs-identifier hs-type">models</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="PropositionalTypes.html#KnowledgeBase"><span class="hs-identifier hs-type">KnowledgeBase</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><span class="annot"><a href="PropositionalTypes.html#Valuation"><span class="hs-identifier hs-type">Valuation</span></a></span><span class="hs-special">]</span><span>
+</span><span id="line-52"></span><span id="models"><span class="annot"><span class="annottext">models :: KnowledgeBase -&gt; [Valuation]
+</span><a href="PropositionalLogic.html#models"><span class="hs-identifier hs-var hs-var">models</span></a></span></span><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span>
+</span><span id="line-53"></span><span class="annot"><a href="PropositionalLogic.html#models"><span class="hs-identifier hs-var">models</span></a></span><span> </span><span id="local-6989586621679040157"><span class="annot"><span class="annottext">KnowledgeBase
+</span><a href="#local-6989586621679040157"><span class="hs-identifier hs-var">kb</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[</span><span> </span><span class="annot"><span class="annottext">Valuation
+</span><a href="#local-6989586621679040156"><span class="hs-identifier hs-var">v</span></a></span><span> </span><span class="hs-glyph">|</span><span> </span><span id="local-6989586621679040156"><span class="annot"><span class="annottext">Valuation
+</span><a href="#local-6989586621679040156"><span class="hs-identifier hs-var">v</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">KnowledgeBase -&gt; [Valuation]
+</span><a href="PropositionalLogic.html#valuations"><span class="hs-identifier hs-var">valuations</span></a></span><span> </span><span class="annot"><span class="annottext">KnowledgeBase
+</span><a href="#local-6989586621679040157"><span class="hs-identifier hs-var">kb</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">[Bool] -&gt; Bool
+forall (t :: * -&gt; *). Foldable t =&gt; t Bool -&gt; Bool
+</span><span class="hs-identifier hs-var">and</span></span><span> </span><span class="hs-special">[</span><span> </span><span class="annot"><span class="annottext">Valuation
+</span><a href="#local-6989586621679040156"><span class="hs-identifier hs-var">v</span></a></span><span> </span><span class="annot"><span class="annottext">Valuation -&gt; Formula -&gt; Bool
+</span><a href="PropositionalLogic.html#satisfies"><span class="hs-operator hs-var">`satisfies`</span></a></span><span> </span><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040154"><span class="hs-identifier hs-var">p</span></a></span><span> </span><span class="hs-glyph">|</span><span> </span><span id="local-6989586621679040154"><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040154"><span class="hs-identifier hs-var">p</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">KnowledgeBase
+</span><a href="#local-6989586621679040157"><span class="hs-identifier hs-var">kb</span></a></span><span> </span><span class="hs-special">]</span><span> </span><span class="hs-special">]</span><span>
+</span><span id="line-54"></span><span>
+</span><span id="line-55"></span><span class="hs-comment">-- | The 'entails' function returns whether or not the given 'KnowledgeBase' entails the given 'Formula'.</span><span>
+</span><span id="line-56"></span><span class="annot"><a href="PropositionalLogic.html#entails"><span class="hs-identifier hs-type">entails</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="PropositionalTypes.html#KnowledgeBase"><span class="hs-identifier hs-type">KnowledgeBase</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="PropositionalTypes.html#Formula"><span class="hs-identifier hs-type">Formula</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Bool</span></span><span>
+</span><span id="line-57"></span><span id="entails"><span class="annot"><span class="annottext">entails :: KnowledgeBase -&gt; Formula -&gt; Bool
+</span><a href="PropositionalLogic.html#entails"><span class="hs-identifier hs-var hs-var">entails</span></a></span></span><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span> </span><span id="local-6989586621679040152"><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040152"><span class="hs-identifier hs-var">p</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Formula -&gt; Bool
+</span><a href="PropositionalLogic.html#isValid"><span class="hs-identifier hs-var">isValid</span></a></span><span> </span><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040152"><span class="hs-identifier hs-var">p</span></a></span><span>
+</span><span id="line-58"></span><span class="annot"><a href="PropositionalLogic.html#entails"><span class="hs-identifier hs-var">entails</span></a></span><span> </span><span id="local-6989586621679040151"><span class="annot"><span class="annottext">KnowledgeBase
+</span><a href="#local-6989586621679040151"><span class="hs-identifier hs-var">kb</span></a></span></span><span> </span><span id="local-6989586621679040150"><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040150"><span class="hs-identifier hs-var">p</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">KnowledgeBase -&gt; [Valuation]
+</span><a href="PropositionalLogic.html#models"><span class="hs-identifier hs-var">models</span></a></span><span> </span><span class="annot"><span class="annottext">KnowledgeBase
+</span><a href="#local-6989586621679040151"><span class="hs-identifier hs-var">kb</span></a></span><span> </span><span class="annot"><span class="annottext">[Valuation] -&gt; [Valuation] -&gt; Bool
+</span><a href="PropositionalHelpers.html#subsumes"><span class="hs-operator hs-var">`subsumes`</span></a></span><span> </span><span class="annot"><span class="annottext">KnowledgeBase -&gt; [Valuation]
+</span><a href="PropositionalLogic.html#models"><span class="hs-identifier hs-var">models</span></a></span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040150"><span class="hs-identifier hs-var">p</span></a></span><span class="hs-special">]</span><span>
+</span><span id="line-59"></span><span>
+</span><span id="line-60"></span><span class="hs-comment">-- | The 'str2form' function returns the 'Formula' encoding for the given String.</span><span>
+</span><span id="line-61"></span><span class="annot"><a href="PropositionalLogic.html#str2form"><span class="hs-identifier hs-type">str2form</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="PropositionalTypes.html#Formula"><span class="hs-identifier hs-type">Formula</span></a></span><span>
+</span><span id="line-62"></span><span id="str2form"><span class="annot"><span class="annottext">str2form :: Name -&gt; Formula
+</span><a href="PropositionalLogic.html#str2form"><span class="hs-identifier hs-var hs-var">str2form</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Name -&gt; Formula
+</span><a href="PropositionalParser.html#parseString"><span class="hs-identifier hs-var">parseString</span></a></span><span>
+</span><span id="line-63"></span></pre></body></html>
