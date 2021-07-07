@@ -16,11 +16,11 @@ parserTest = do
 
 rationalClosureTest = do
   let dkb =
-        [ Typically (str2form "b") (str2form "f")
-        , Typically (str2form "p") (str2form "Not f")
-        , Typically (str2form "b") (str2form "w")
+        [ typically (str2form "b Implies f")
+        , typically (str2form "p Implies Not f")
+        , typically (str2form "b Implies w")
         ]
   let kb = [str2form "p Implies b", str2form "R Implies b"]
   let jkb   = (kb, dkb)
-  let query = Typically (str2form "p") (str2form "b")
+  let query = typically (str2form "p Implies b")
   entailsRC jkb query
