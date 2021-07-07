@@ -19,7 +19,7 @@ Here is a more detailed description:
 
 **Example**
 
-This example will provide a solution to the [birds and penguins](<https://projects.cs.uct.ac.za/honsproj/cgi-bin/view/2019/morris_ross.zip/#:~:text=Pecky%20the%20penguin%20used%20a%20classical%20reasoning%20system.&text=Defeasible%20(non%2Dmonotonic)%20reasoning,that%20%22penguins%20do%20fly%22.>) classical reasoning problem.
+This example will provide a solution to the [birds and penguins](https://projects.cs.uct.ac.za/honsproj/cgi-bin/view/2019/morris_ross.zip/images/comic-penguins-strip.png) classical reasoning problem.
 We'll use the extended version of this example just to show that Rational Closure is working (to some perceived extent).
 
 1. Load the library.
