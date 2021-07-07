@@ -36,7 +36,7 @@ valuations :: KnowledgeBase -> [Valuation]
 valuations kb = [ zip atomNames bools | bools <- boolPerms ]
  where
   atomNames       = removeDuplicates [ n | p <- kb, n <- atoms p ]
-  valuationsCount = (length atomNames) ^ 2
+  valuationsCount = length atomNames ^ 2
   boolPerms =
     reverse [ int2bool i valuationsCount | i <- [0 .. valuationsCount - 1] ]
 
@@ -54,7 +54,7 @@ models kb = [ v | v <- valuations kb, and [ v `satisfies` p | p <- kb ] ]
 -- | entails function checks if a knowledge base entails a formula
 entails :: KnowledgeBase -> Formula -> Bool
 entails [] p = isValid p
-entails kb p = models kb `subsumes4` models [p]
+entails kb p = models kb `subsumes` models [p]
 
 -- | str2form function converts a string to a formula
 str2form :: String -> Formula
