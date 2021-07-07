@@ -1,33 +1,33 @@
 -- | Propositional types module
 module PropositionalTypes where
 
--- | Name type
+-- | The 'Name' type represents the name of an 'Atom'.
 type Name = String
 
--- | Valuation valuation type
+-- | The 'Valuation' type encodes a propositional valuation.
 type Valuation = [(Name, Bool)]
 
--- | type for formula of logic
+-- | The 'Formula' datatype encodes a propositional formula.
 data Formula
-  = -- | Const
+  = -- | A constant Boolean constructor.
     Const Bool
-  | -- | Atom
+  | -- | The propositional 'Atom' constructor.
     Atom Name
-  | -- | Not
+  | -- | The 'Not' (negation) unary connective constructor.
     Not Formula
-  | -- | And
+  | -- | The 'And' (conjunction) binary connective constructor.
     And Formula Formula
-  | -- | Or
+  | -- | The 'Or' (disjunction) binary connective constructor.
     Or Formula Formula
-  | -- | Implication
+  | -- | The 'Implies' (if then) binary connective constructor.
     Implies Formula Formula
-  | -- | If and only if
+  | -- | The 'Iff' (if and only if) binary connective constructor.
     Iff Formula Formula
 
--- | KnowledgeBase type
+-- | The 'KnowledgeBase' type encodes a propositional knowledge base.
 type KnowledgeBase = [Formula]
 
--- | Show instance of form
+-- | The 'Show' instance for 'Formula'.
 instance Show Formula where
   show (Const True ) = "⊤"
   show (Const False) = "⊥"
@@ -38,7 +38,7 @@ instance Show Formula where
   show (Implies p q) = "(" ++ show p ++ "→" ++ show q ++ ")"
   show (Iff     p q) = "(" ++ show p ++ "↔" ++ show q ++ ")"
 
--- | Eq instance of form
+-- | The 'Eq' instance for 'Formula'.
 instance Eq Formula where
   (==) (Atom s1    ) (Atom s2    ) = s1 == s2
   (==) (Not  p     ) (Not  q     ) = p == q
