@@ -5,6 +5,10 @@ import           DefeasibleHelpers
 import           DefeasibleTypes
 import           PropositionalTypes
 
+-- | The 'twiddle' function takes in two propositional 'Formula's and returns a 'DefeasibleImplication'.
+twiddle :: Formula -> Formula -> DefeasibleImplication
+twiddle p q = Typically p q
+
 -- | The 'materialise' function returns the corresponding 'KnowledgeBase' for
 -- the given 'DefeasibleKnowledgeBase'.
 materialise :: DefeasibleKnowledgeBase -> KnowledgeBase
