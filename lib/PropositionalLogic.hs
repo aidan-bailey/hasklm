@@ -56,6 +56,6 @@ entails :: KnowledgeBase -> Formula -> Bool
 entails [] p = isValid p
 entails kb p = models kb `subsumes` models [p]
 
--- | The 'str2form' function returns the given String's 'Formula' representation.
+-- | The 'str2form' function returns the 'Formula' encoding for the given String.
 str2form :: String -> Formula
 str2form = parseString
