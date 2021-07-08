@@ -19,7 +19,8 @@ antecedant (Or      p _) = p
 antecedant (Implies p _) = p
 antecedant (Iff     p _) = p
 
--- | The 'combinations' function returns the
+-- | The 'combinations' function returns the combinatorial subsets of a list
+-- of a specified size.
 combinations :: Int -> [a] -> [[a]]
 combinations 0 _  = [[]]
 combinations _ [] = []
