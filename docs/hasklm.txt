@@ -158,6 +158,9 @@ module DefeasibleHelpers
 --   <a>Formula</a>.
 antecedant :: Formula -> Formula
 
+-- | The <a>combinations</a> function returns the
+combinations :: Int -> [a] -> [[a]]
+
 -- | The <a>baseRankAux</a> function is the auxiliary function for the
 --   <tt>baseRank</tt> function.
 baseRankAux :: KnowledgeBase -> KnowledgeBase -> RankedModels -> RankedModels
@@ -165,6 +168,11 @@ baseRankAux :: KnowledgeBase -> KnowledgeBase -> RankedModels -> RankedModels
 -- | The <a>entailsRCAux</a> function is the auxiliary function for the
 --   <tt>entailsRC</tt> function.
 entailsRCAux :: RankedModels -> Formula -> Bool
+
+-- | The <a>entailsLCAux</a> function is the auxiliary function for the
+--   <tt>entailsLC</tt> function. NOTE: This is a highly experimental
+--   function and it's correctness has not been validated.
+entailsLCAux :: RankedModels -> Formula -> Bool
 
 
 -- | Defeasible logic module
@@ -187,3 +195,10 @@ baseRank :: JointKnowledgeBase -> RankedModels
 --   <tt>DefeasibleInterpretation</tt> is defeasibly entailed (using
 --   Rational Closure) by the given <a>JointKnowledgeBase</a>.
 entailsRC :: JointKnowledgeBase -> DefeasibleImplication -> Bool
+
+-- | The <a>entailsLC</a> function returns whether or not the given
+--   <tt>DefeasibleInterpretation</tt> is defeasibly entailed (using
+--   Lexicographic Closure) by the given <a>JointKnowledgeBase</a>. NOTE:
+--   This is a highly experimental function and it's correctness has not
+--   been validated.
+entailsLC :: JointKnowledgeBase -> DefeasibleImplication -> Bool
