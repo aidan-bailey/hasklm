@@ -11,7 +11,7 @@ The most commonly used commands are described below.
 - Build Package: `stack build`
 - Load Library into GHCi (Testing): `stack repl`
 - Run Tests: `stack test`
-- Use Library: `stack repl --only-main`
+- Use Application: `stack repl --only-main`
 
 An example of defeasible entailment checking using Rational Closure can be found in the [test file](https://github.com/aidanjbailey/hasklm/blob/master/test/MyLibTest.hs) within the `rationalClosureTest` function.
 
@@ -22,7 +22,7 @@ Here is a more detailed description:
 This example will provide a solution to the [birds and penguins](https://projects.cs.uct.ac.za/honsproj/cgi-bin/view/2019/morris_ross.zip/images/comic-penguins-strip.png) classical reasoning problem.
 We'll use the extended version of this example just to show that Rational Closure is working (to some perceived extent).
 
-1. Load the library.
+1. Load the Application.
 
 ```sh
 stack repl --only-main
