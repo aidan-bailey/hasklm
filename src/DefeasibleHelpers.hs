@@ -19,6 +19,13 @@ antecedant (Or      p _) = p
 antecedant (Implies p _) = p
 antecedant (Iff     p _) = p
 
+-- | The 'combinations' function returns the
+combinations :: Int -> [a] -> [[a]]
+combinations 0 _  = [[]]
+combinations _ [] = []
+combinations n (x : xs) =
+  map (x :) (combinations (n - 1) xs) ++ combinations n xs
+
 -----------------
 -- AUXILIARIES --
 -----------------
@@ -47,3 +54,28 @@ entailsRCAux (s : se) p
  where
   kb   = [ q | r <- s : se, q <- r ]
   ante = antecedant p
+
+-- | The 'entailsLCAux' function is the auxiliary function for the 'entailsLC' function.
+-- NOTE: This is a highly experimental function and it's correctness has not been validated.
+entailsLCAux :: RankedModels -> Formula -> Bool
+entailsLCAux [] p = isValid p
+entailsLCAux (s : se) p
+  | null se = kb `entails` Not ante
+  | otherwise = if null selectedRefinement
+    then entailsLCAux se p
+    else kb `entails` p
+ where
+  ante        = antecedant p
+  stateLength = length s
+  refinements =
+    [ stateComb
+    | i         <- reverse [1 .. stateLength]
+    , stateComb <- combinations i s
+    ]
+  selectedRefinement = head
+    [ state
+    | state <- refinements
+    , entails [ q | r <- state : se, q <- r ] (Not ante)
+    ]
+  noRefinement = null selectedRefinement
+  kb           = [ q | r <- selectedRefinement : se, q <- r ]
