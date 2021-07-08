@@ -56,7 +56,7 @@ entailsRCAux (s : se) p
   ante = antecedant p
 
 -- | The 'entailsLCAux' function is the auxiliary function for the 'entailsLC' function.
--- NOTE: This is a highly experimental function and it's correctness has not been validated.
+-- NOTE: This is a highly experimental function and its correctness has not been validated.
 entailsLCAux :: RankedModels -> Formula -> Bool
 entailsLCAux [] p = isValid p
 entailsLCAux (s : se) p
