@@ -11,7 +11,7 @@ main = do
   quickCheck parserTest2
   quickCheck penguinRCTest
   quickCheck leakyboatRCTest
-  quickCheck leakyboatLCTest
+  quickCheck penguinLCTest
 
 -------------------
 -- PROPOSITIONAL --
