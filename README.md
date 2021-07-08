@@ -137,4 +137,4 @@ I am still quite a novice when it comes to formalised logic.
 I've tried to define everything using names that closely relate to their corresponding concepts in formal KRR literature, mostly in reference to [Adam Kaliski's 2020 Dissertation](https://open.uct.ac.za/handle/11427/32743?show=full) on the topic.
 Some (if not most) of the functions and procedures are not as efficient as they could be, but that's just the nature of programming isn't it.
 
-With that being said, I am open to any and all suggestions in order to improve the repo, whether it's in readability, efficiency, functionality, or just to give it better relations to the literature.
+With that being said, I am open to any and all suggestions in order to improve the repo, whether it's in readability, efficiency, functionality, Haskell best practices, or just to give it better relations to the literature.
