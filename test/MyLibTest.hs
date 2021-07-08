@@ -7,13 +7,26 @@ import           PropositionalTypes
 
 main :: IO ()
 main = do
-  quickCheck parserTest
+  quickCheck parserTest1
+  quickCheck parserTest2
   quickCheck penguinRCTest
   quickCheck leakyboatRCTest
 
-parserTest = do
-  let form = str2form "A And B"
-  form == And (Atom "A") (Atom "B")
+-------------------
+-- PROPOSITIONAL --
+-------------------
+
+parserTest1 = do
+  let form = str2form "A And B Implies C"
+  form == Implies (And (Atom "A") (Atom "B")) (Atom "C")
+
+parserTest2 = do
+  let form = str2form "A And (B Implies C)"
+  form == And (Atom "A") (Implies (Atom "B") (Atom "C"))
+
+----------------
+-- DEFEASIBLE --
+----------------
 
 penguinRCTest = do
   let dkb =

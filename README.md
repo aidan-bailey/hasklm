@@ -1,33 +1,78 @@
 # HasKLM
 
-`Hasklm` is a Haskell based implementation of defeasible entailment checking using the [KLM-approach](https://open.uct.ac.za/handle/11427/32743?show=full).
+`Hasklm` is a Haskell based defeasible reasoner using the [KLM-approach](https://open.uct.ac.za/handle/11427/32743?show=full).
+
+## Features
+
+**Overview Feature List:**
+
+- Parsing a string into a propositional formula.
+- Computation of the valuations/models for propositional knowledge bases.
+- Propositional satisfiability checking.
+- Propositional entailment checking.
+- The Base Rank algorithm.
+- Rational Closure based defeasible entailment checking.
+
+**Planned Feature List:**
+
+- Lexicographic Closure based defeasible entailment checking.
+- Rigorous testing.
+- The Relevant Closure algorithm.
+- Propositional knowledge base parsing.
+- Defeasible implication parsing.
+- Defeasible knowledge base parsing.
+- Joint knowledge base parsing.
+- Knowledge base generation.
 
 Checkout the [docs](https://github.com/aidanjbailey/hasklm/tree/master/docs) for all currently available functionality.
 
-[Stack](https://docs.haskellstack.org/en/stable/README/) is the only dependency as it is the project's build tool.
+## Usage
 
-The most commonly used commands are described below.
+[Stack](https://docs.haskellstack.org/en/stable/README/) is the project's build tool.
 
-- Build Package: `stack build`
-- Load Library into GHCi (For Development/Testing purposes): `stack repl`
-- Run Tests: `stack test`
-- Use Application: `stack repl --only-main`
+**Commonly Used Commands:**
 
-## Examples
+Build Project:
 
-Examples of defeasible entailment checking, using Rational Closure, can be found in the [test file](https://github.com/aidanjbailey/hasklm/blob/master/test/MyLibTest.hs).
+```sh
+stack build
+```
 
-### RationalClosure Example
+Run Tests:
 
-This example will be in reference to the [birds and penguins](https://projects.cs.uct.ac.za/honsproj/cgi-bin/view/2019/morris_ross.zip/images/comic-penguins-strip.png) classical reasoning problem.
+```sh
+stack test
+```
 
-1. Load the Application.
+Load All Modules into GHCi (For Development/Testing purposes):
+
+```sh
+stack repl
+```
+
+Load Application into GHCi:
 
 ```sh
 stack repl --only-main
 ```
 
-2. Define the defeasible relations.
+## Examples
+
+Examples can be found in the [test file](https://github.com/aidanjbailey/hasklm/blob/master/test/MyLibTest.hs).
+
+### RationalClosure Example
+
+This example will be in reference to the [birds and penguins](https://projects.cs.uct.ac.za/honsproj/cgi-bin/view/2019/morris_ross.zip/images/comic-penguins-strip.png) classical reasoning problem.
+
+**Instructions**
+
+Load the application.
+
+```sh
+stack repl --only-main
+```
+
+Define the _defeasible implications_.
 
 ```haskell
 let defRel1 = typically (str2form "bird Implies flies")
@@ -35,53 +80,61 @@ let defRel2 = typically (str2form "bird Implies wings")
 let defRel3 = typically (str2form "penguin Implies Not flies")
 ```
 
-3. Construct a defeasible knowledge base using the defeasible relations.
+Construct a _defeasible knowledge base_ using the defeasible implications.
 
 ```haskell
 let dkb = [defRel1, defRel2, defRel3]
 ```
 
-4. Define the classical propositional statements.
+Define the classical _propositional formulas_.
 
 ```haskell
 let propForm1 = str2form "penguin Implies bird"
 let propForm2 = str2form "Robin Implies bird"
 ```
 
-5. Construct the propositional knowledge base.
+Define the _propositional knowledge base_.
 
 ```haskell
 let pkb = [propForm1, propForm2]
 ```
 
-6. Combine the propositional and defeasible knowledge bases into a joint knowledge base relation.
+Combine the propositional and defeasible knowledge bases into a _joint knowledge base relation_.
 
 ```haskell
 let jkb = (pkb, dkb)
 ```
 
-7. Construct a defeasible query.
+Define a _defeasible query_.
 
 ```haskell
 let defQuery = typically (str2form "penguin Implies bird")
 ```
 
-8. Execute Rational Closure with the joint knowledge base and defeasible query and print the result.
+Execute _Rational Closure defeasible entailment checking_ with the joint knowledge base and defeasible query, printing the result.
 
 ```haskell
 print (entailsRC jkb defQuery)
 ```
 
-9. If the above outputs `True`, all is well! A penguin is still a bird! For interests sake, we will define another defeasible query.
+If the above outputs `True`, all is well! A penguin is still a bird! For interests sake, we will define another defeasible query.
 
 ```haskell
 let defQuery2 = typically (str2form "penguin Implies wings")
 ```
 
-10. Execute and print as before.
+Execute and print as before.
 
 ```haskell
 print (entailsRC jkb defQuery2)
 ```
 
-11. If the above outputs `False`, all is still well! Rational Closure would conclude through the some process that since penguins are atypical birds that do not fly, penguins should not have wings either.
+If the above outputs `False`, all is still well! Rational Closure concludes that since penguins are atypical birds that do not fly, it is most likely that penguins do not have wings either.
+
+## Disclaimer
+
+I am still quite a novice when it comes to formalised logic.
+I've tried to define everything using names that closely relate to their corresponding concepts in formal KRR literature, mostly in reference to [Adam Kaliski's 2020 Dissertation](https://open.uct.ac.za/handle/11427/32743?show=full) on the topic.
+Some (if not most) of the functions and procedures are not as efficient as they could be, but that's just the nature of programming isn't it.
+
+With that being said, I am open to any and all suggestions in order to improve the repo, whether they're for readability, efficiency, functionality, Haskell best practices, or just to give it better relations to the literature.
