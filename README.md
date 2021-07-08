@@ -75,15 +75,15 @@ stack repl --only-main
 Define the _defeasible implications_.
 
 ```haskell
-let defRel1 = typically (str2form "bird Implies flies")
-let defRel2 = typically (str2form "bird Implies wings")
-let defRel3 = typically (str2form "penguin Implies Not flies")
+let defImpl1 = typically (str2form "bird Implies flies")
+let defImpl2 = typically (str2form "bird Implies wings")
+let defImpl3 = typically (str2form "penguin Implies Not flies")
 ```
 
 Construct a _defeasible knowledge base_ using the defeasible implications.
 
 ```haskell
-let dkb = [defRel1, defRel2, defRel3]
+let dkb = [defImpl1, defImpl2, defImpl3]
 ```
 
 Define the classical _propositional formulas_.
