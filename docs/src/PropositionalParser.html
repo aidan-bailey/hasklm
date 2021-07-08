@@ -305,27 +305,27 @@ forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span id="line-89"></span><span class="hs-comment">-- | parseString function parses a string into a logical formula</span><span>
 </span><span id="line-90"></span><span class="annot"><a href="PropositionalParser.html#parseString"><span class="hs-identifier hs-type">parseString</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="PropositionalTypes.html#Formula"><span class="hs-identifier hs-type">Formula</span></a></span><span>
 </span><span id="line-91"></span><span id="parseString"><span class="annot"><span class="annottext">parseString :: String -&gt; Formula
-</span><a href="PropositionalParser.html#parseString"><span class="hs-identifier hs-var hs-var">parseString</span></a></span></span><span> </span><span id="local-6989586621679040184"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679040184"><span class="hs-identifier hs-var">str</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Parser Formula -&gt; String -&gt; String -&gt; Either ParseError Formula
+</span><a href="PropositionalParser.html#parseString"><span class="hs-identifier hs-var hs-var">parseString</span></a></span></span><span> </span><span id="local-6989586621679040196"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679040196"><span class="hs-identifier hs-var">str</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Parser Formula -&gt; String -&gt; String -&gt; Either ParseError Formula
 forall s t a.
 Stream s Identity t =&gt;
 Parsec s () a -&gt; String -&gt; s -&gt; Either ParseError a
 </span><span class="hs-identifier hs-var">parse</span></span><span> </span><span class="annot"><span class="annottext">Parser Formula
 </span><a href="PropositionalParser.html#propositionalParser"><span class="hs-identifier hs-var">propositionalParser</span></a></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;&quot;</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679040184"><span class="hs-identifier hs-var">str</span></a></span><span> </span><span class="hs-keyword">of</span><span>
-</span><span id="line-92"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">Left</span></span><span>  </span><span id="local-6989586621679040182"><span class="annot"><span class="annottext">ParseError
-</span><a href="#local-6989586621679040182"><span class="hs-identifier hs-var">e</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">String -&gt; Formula
+</span><a href="#local-6989586621679040196"><span class="hs-identifier hs-var">str</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><span id="line-92"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">Left</span></span><span>  </span><span id="local-6989586621679040194"><span class="annot"><span class="annottext">ParseError
+</span><a href="#local-6989586621679040194"><span class="hs-identifier hs-var">e</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">String -&gt; Formula
 forall a. HasCallStack =&gt; String -&gt; a
 </span><span class="hs-identifier hs-var">error</span></span><span> </span><span class="annot"><span class="annottext">(String -&gt; Formula) -&gt; String -&gt; Formula
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">ParseError -&gt; String
 forall a. Show a =&gt; a -&gt; String
 </span><span class="hs-identifier hs-var">show</span></span><span> </span><span class="annot"><span class="annottext">ParseError
-</span><a href="#local-6989586621679040182"><span class="hs-identifier hs-var">e</span></a></span><span>
-</span><span id="line-93"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span id="local-6989586621679040179"><span class="annot"><span class="annottext">Formula
-</span><a href="#local-6989586621679040179"><span class="hs-identifier hs-var">r</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Formula
-</span><a href="#local-6989586621679040179"><span class="hs-identifier hs-var">r</span></a></span><span>
+</span><a href="#local-6989586621679040194"><span class="hs-identifier hs-var">e</span></a></span><span>
+</span><span id="line-93"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span id="local-6989586621679040191"><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040191"><span class="hs-identifier hs-var">r</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040191"><span class="hs-identifier hs-var">r</span></a></span><span>
 </span><span id="line-94"></span><span>
 </span><span id="line-95"></span><span class="hs-comment">{-
 -- | parseFile function parses a file into a logical formula (untested)

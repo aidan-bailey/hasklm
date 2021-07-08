@@ -12,267 +12,268 @@
 </span><span id="line-12"></span><span class="hs-comment">-- | The 'antecedant' function returns the antecedant for a given 'Formula'.</span><span>
 </span><span id="line-13"></span><span class="annot"><a href="DefeasibleHelpers.html#antecedant"><span class="hs-identifier hs-type">antecedant</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="PropositionalTypes.html#Formula"><span class="hs-identifier hs-type">Formula</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="PropositionalTypes.html#Formula"><span class="hs-identifier hs-type">Formula</span></a></span><span>
 </span><span id="line-14"></span><span id="antecedant"><span class="annot"><span class="annottext">antecedant :: Formula -&gt; Formula
-</span><a href="DefeasibleHelpers.html#antecedant"><span class="hs-identifier hs-var hs-var">antecedant</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="PropositionalTypes.html#Const"><span class="hs-identifier hs-type">Const</span></a></span><span> </span><span id="local-6989586621679040527"><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679040527"><span class="hs-identifier hs-var">b</span></a></span></span><span>    </span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Formula
+</span><a href="DefeasibleHelpers.html#antecedant"><span class="hs-identifier hs-var hs-var">antecedant</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="PropositionalTypes.html#Const"><span class="hs-identifier hs-type">Const</span></a></span><span> </span><span id="local-6989586621679040543"><span class="annot"><span class="annottext">Bool
+</span><a href="#local-6989586621679040543"><span class="hs-identifier hs-var">b</span></a></span></span><span>    </span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Formula
 </span><a href="PropositionalTypes.html#Const"><span class="hs-identifier hs-var">Const</span></a></span><span> </span><span class="annot"><span class="annottext">Bool
-</span><a href="#local-6989586621679040527"><span class="hs-identifier hs-var">b</span></a></span><span>
-</span><span id="line-15"></span><span class="annot"><a href="DefeasibleHelpers.html#antecedant"><span class="hs-identifier hs-var">antecedant</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="PropositionalTypes.html#Atom"><span class="hs-identifier hs-type">Atom</span></a></span><span>  </span><span id="local-6989586621679040525"><span class="annot"><span class="annottext">Name
-</span><a href="#local-6989586621679040525"><span class="hs-identifier hs-var">p</span></a></span></span><span>    </span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Name -&gt; Formula
+</span><a href="#local-6989586621679040543"><span class="hs-identifier hs-var">b</span></a></span><span>
+</span><span id="line-15"></span><span class="annot"><a href="DefeasibleHelpers.html#antecedant"><span class="hs-identifier hs-var">antecedant</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="PropositionalTypes.html#Atom"><span class="hs-identifier hs-type">Atom</span></a></span><span>  </span><span id="local-6989586621679040541"><span class="annot"><span class="annottext">Name
+</span><a href="#local-6989586621679040541"><span class="hs-identifier hs-var">p</span></a></span></span><span>    </span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Name -&gt; Formula
 </span><a href="PropositionalTypes.html#Atom"><span class="hs-identifier hs-var">Atom</span></a></span><span> </span><span class="annot"><span class="annottext">Name
-</span><a href="#local-6989586621679040525"><span class="hs-identifier hs-var">p</span></a></span><span>
-</span><span id="line-16"></span><span class="annot"><a href="DefeasibleHelpers.html#antecedant"><span class="hs-identifier hs-var">antecedant</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="PropositionalTypes.html#Not"><span class="hs-identifier hs-type">Not</span></a></span><span>   </span><span id="local-6989586621679040523"><span class="annot"><span class="annottext">Formula
-</span><a href="#local-6989586621679040523"><span class="hs-identifier hs-var">p</span></a></span></span><span>    </span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Formula -&gt; Formula
+</span><a href="#local-6989586621679040541"><span class="hs-identifier hs-var">p</span></a></span><span>
+</span><span id="line-16"></span><span class="annot"><a href="DefeasibleHelpers.html#antecedant"><span class="hs-identifier hs-var">antecedant</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="PropositionalTypes.html#Not"><span class="hs-identifier hs-type">Not</span></a></span><span>   </span><span id="local-6989586621679040539"><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040539"><span class="hs-identifier hs-var">p</span></a></span></span><span>    </span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Formula -&gt; Formula
 </span><a href="PropositionalTypes.html#Not"><span class="hs-identifier hs-var">Not</span></a></span><span> </span><span class="annot"><span class="annottext">Formula
-</span><a href="#local-6989586621679040523"><span class="hs-identifier hs-var">p</span></a></span><span>
-</span><span id="line-17"></span><span class="annot"><a href="DefeasibleHelpers.html#antecedant"><span class="hs-identifier hs-var">antecedant</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="PropositionalTypes.html#And"><span class="hs-identifier hs-type">And</span></a></span><span>     </span><span id="local-6989586621679040521"><span class="annot"><span class="annottext">Formula
-</span><a href="#local-6989586621679040521"><span class="hs-identifier hs-var">p</span></a></span></span><span> </span><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040539"><span class="hs-identifier hs-var">p</span></a></span><span>
+</span><span id="line-17"></span><span class="annot"><a href="DefeasibleHelpers.html#antecedant"><span class="hs-identifier hs-var">antecedant</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="PropositionalTypes.html#And"><span class="hs-identifier hs-type">And</span></a></span><span>     </span><span id="local-6989586621679040537"><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040537"><span class="hs-identifier hs-var">p</span></a></span></span><span> </span><span class="annot"><span class="annottext">Formula
 </span><span class="hs-identifier">_</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Formula
-</span><a href="#local-6989586621679040521"><span class="hs-identifier hs-var">p</span></a></span><span>
-</span><span id="line-18"></span><span class="annot"><a href="DefeasibleHelpers.html#antecedant"><span class="hs-identifier hs-var">antecedant</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="PropositionalTypes.html#Or"><span class="hs-identifier hs-type">Or</span></a></span><span>      </span><span id="local-6989586621679040519"><span class="annot"><span class="annottext">Formula
-</span><a href="#local-6989586621679040519"><span class="hs-identifier hs-var">p</span></a></span></span><span> </span><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040537"><span class="hs-identifier hs-var">p</span></a></span><span>
+</span><span id="line-18"></span><span class="annot"><a href="DefeasibleHelpers.html#antecedant"><span class="hs-identifier hs-var">antecedant</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="PropositionalTypes.html#Or"><span class="hs-identifier hs-type">Or</span></a></span><span>      </span><span id="local-6989586621679040535"><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040535"><span class="hs-identifier hs-var">p</span></a></span></span><span> </span><span class="annot"><span class="annottext">Formula
 </span><span class="hs-identifier">_</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Formula
-</span><a href="#local-6989586621679040519"><span class="hs-identifier hs-var">p</span></a></span><span>
-</span><span id="line-19"></span><span class="annot"><a href="DefeasibleHelpers.html#antecedant"><span class="hs-identifier hs-var">antecedant</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="PropositionalTypes.html#Implies"><span class="hs-identifier hs-type">Implies</span></a></span><span> </span><span id="local-6989586621679040517"><span class="annot"><span class="annottext">Formula
-</span><a href="#local-6989586621679040517"><span class="hs-identifier hs-var">p</span></a></span></span><span> </span><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040535"><span class="hs-identifier hs-var">p</span></a></span><span>
+</span><span id="line-19"></span><span class="annot"><a href="DefeasibleHelpers.html#antecedant"><span class="hs-identifier hs-var">antecedant</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="PropositionalTypes.html#Implies"><span class="hs-identifier hs-type">Implies</span></a></span><span> </span><span id="local-6989586621679040533"><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040533"><span class="hs-identifier hs-var">p</span></a></span></span><span> </span><span class="annot"><span class="annottext">Formula
 </span><span class="hs-identifier">_</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Formula
-</span><a href="#local-6989586621679040517"><span class="hs-identifier hs-var">p</span></a></span><span>
-</span><span id="line-20"></span><span class="annot"><a href="DefeasibleHelpers.html#antecedant"><span class="hs-identifier hs-var">antecedant</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="PropositionalTypes.html#Iff"><span class="hs-identifier hs-type">Iff</span></a></span><span>     </span><span id="local-6989586621679040515"><span class="annot"><span class="annottext">Formula
-</span><a href="#local-6989586621679040515"><span class="hs-identifier hs-var">p</span></a></span></span><span> </span><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040533"><span class="hs-identifier hs-var">p</span></a></span><span>
+</span><span id="line-20"></span><span class="annot"><a href="DefeasibleHelpers.html#antecedant"><span class="hs-identifier hs-var">antecedant</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="PropositionalTypes.html#Iff"><span class="hs-identifier hs-type">Iff</span></a></span><span>     </span><span id="local-6989586621679040531"><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040531"><span class="hs-identifier hs-var">p</span></a></span></span><span> </span><span class="annot"><span class="annottext">Formula
 </span><span class="hs-identifier">_</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Formula
-</span><a href="#local-6989586621679040515"><span class="hs-identifier hs-var">p</span></a></span><span>
+</span><a href="#local-6989586621679040531"><span class="hs-identifier hs-var">p</span></a></span><span>
 </span><span id="line-21"></span><span>
-</span><span id="line-22"></span><span class="hs-comment">-- | The 'combinations' function returns the</span><span>
-</span><span id="line-23"></span><span id="local-6989586621679040542"><span class="annot"><a href="DefeasibleHelpers.html#combinations"><span class="hs-identifier hs-type">combinations</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><span class="annot"><a href="#local-6989586621679040542"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">]</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><span class="hs-special">[</span><span class="annot"><a href="#local-6989586621679040542"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">]</span><span class="hs-special">]</span></span><span>
-</span><span id="line-24"></span><span id="combinations"><span class="annot"><span class="annottext">combinations :: Int -&gt; [a] -&gt; [[a]]
+</span><span id="line-22"></span><span class="hs-comment">-- | The 'combinations' function returns the combinatorial subsets of a list</span><span>
+</span><span id="line-23"></span><span class="hs-comment">-- of a specified size.</span><span>
+</span><span id="line-24"></span><span id="local-6989586621679040558"><span class="annot"><a href="DefeasibleHelpers.html#combinations"><span class="hs-identifier hs-type">combinations</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><span class="annot"><a href="#local-6989586621679040558"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">]</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><span class="hs-special">[</span><span class="annot"><a href="#local-6989586621679040558"><span class="hs-identifier hs-type">a</span></a></span><span class="hs-special">]</span><span class="hs-special">]</span></span><span>
+</span><span id="line-25"></span><span id="combinations"><span class="annot"><span class="annottext">combinations :: Int -&gt; [a] -&gt; [[a]]
 </span><a href="DefeasibleHelpers.html#combinations"><span class="hs-identifier hs-var hs-var">combinations</span></a></span></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">0</span></span><span> </span><span class="annot"><span class="annottext">[a]
 </span><span class="hs-identifier">_</span></span><span>  </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[</span><span class="hs-special">[</span><span class="hs-special">]</span><span class="hs-special">]</span><span>
-</span><span id="line-25"></span><span class="annot"><a href="DefeasibleHelpers.html#combinations"><span class="hs-identifier hs-var">combinations</span></a></span><span> </span><span class="annot"><span class="annottext">Int
+</span><span id="line-26"></span><span class="annot"><a href="DefeasibleHelpers.html#combinations"><span class="hs-identifier hs-var">combinations</span></a></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-identifier">_</span></span><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span>
-</span><span id="line-26"></span><span class="annot"><a href="DefeasibleHelpers.html#combinations"><span class="hs-identifier hs-var">combinations</span></a></span><span> </span><span id="local-6989586621679040513"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679040513"><span class="hs-identifier hs-var">n</span></a></span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679040512"><span class="annot"><span class="annottext">a
-</span><a href="#local-6989586621679040512"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span class="annot"><span class="hs-glyph hs-type">:</span></span><span> </span><span id="local-6989586621679040511"><span class="annot"><span class="annottext">[a]
-</span><a href="#local-6989586621679040511"><span class="hs-identifier hs-var">xs</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span>
-</span><span id="line-27"></span><span>  </span><span class="annot"><span class="annottext">([a] -&gt; [a]) -&gt; [[a]] -&gt; [[a]]
+</span><span id="line-27"></span><span class="annot"><a href="DefeasibleHelpers.html#combinations"><span class="hs-identifier hs-var">combinations</span></a></span><span> </span><span id="local-6989586621679040529"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679040529"><span class="hs-identifier hs-var">n</span></a></span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679040528"><span class="annot"><span class="annottext">a
+</span><a href="#local-6989586621679040528"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span class="annot"><span class="hs-glyph hs-type">:</span></span><span> </span><span id="local-6989586621679040527"><span class="annot"><span class="annottext">[a]
+</span><a href="#local-6989586621679040527"><span class="hs-identifier hs-var">xs</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span>
+</span><span id="line-28"></span><span>  </span><span class="annot"><span class="annottext">([a] -&gt; [a]) -&gt; [[a]] -&gt; [[a]]
 forall a b. (a -&gt; b) -&gt; [a] -&gt; [b]
 </span><span class="hs-identifier hs-var">map</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">a
-</span><a href="#local-6989586621679040512"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="annot"><span class="annottext">a -&gt; [a] -&gt; [a]
+</span><a href="#local-6989586621679040528"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="annot"><span class="annottext">a -&gt; [a] -&gt; [a]
 forall a. a -&gt; [a] -&gt; [a]
 </span><span class="hs-glyph hs-var">:</span></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Int -&gt; [a] -&gt; [[a]]
 forall a. Int -&gt; [a] -&gt; [[a]]
 </span><a href="DefeasibleHelpers.html#combinations"><span class="hs-identifier hs-var">combinations</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679040513"><span class="hs-identifier hs-var">n</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
+</span><a href="#local-6989586621679040529"><span class="hs-identifier hs-var">n</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Int
 forall a. Num a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-glyph hs-var">-</span></span><span> </span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">1</span></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">[a]
-</span><a href="#local-6989586621679040511"><span class="hs-identifier hs-var">xs</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">[[a]] -&gt; [[a]] -&gt; [[a]]
+</span><a href="#local-6989586621679040527"><span class="hs-identifier hs-var">xs</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">[[a]] -&gt; [[a]] -&gt; [[a]]
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">Int -&gt; [a] -&gt; [[a]]
 forall a. Int -&gt; [a] -&gt; [[a]]
 </span><a href="DefeasibleHelpers.html#combinations"><span class="hs-identifier hs-var">combinations</span></a></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679040513"><span class="hs-identifier hs-var">n</span></a></span><span> </span><span class="annot"><span class="annottext">[a]
-</span><a href="#local-6989586621679040511"><span class="hs-identifier hs-var">xs</span></a></span><span>
-</span><span id="line-28"></span><span>
-</span><span id="line-29"></span><span class="hs-comment">-----------------</span><span>
-</span><span id="line-30"></span><span class="hs-comment">-- AUXILIARIES --</span><span>
-</span><span id="line-31"></span><span class="hs-comment">-----------------</span><span>
-</span><span id="line-32"></span><span>
-</span><span id="line-33"></span><span class="hs-comment">-- | The 'baseRankAux' function is the auxiliary function for the 'baseRank' function.</span><span>
-</span><span id="line-34"></span><span class="annot"><a href="DefeasibleHelpers.html#baseRankAux"><span class="hs-identifier hs-type">baseRankAux</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="PropositionalTypes.html#KnowledgeBase"><span class="hs-identifier hs-type">KnowledgeBase</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="PropositionalTypes.html#KnowledgeBase"><span class="hs-identifier hs-type">KnowledgeBase</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="DefeasibleTypes.html#RankedModels"><span class="hs-identifier hs-type">RankedModels</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="DefeasibleTypes.html#RankedModels"><span class="hs-identifier hs-type">RankedModels</span></a></span><span>
-</span><span id="line-35"></span><span id="baseRankAux"><span class="annot"><span class="annottext">baseRankAux :: KnowledgeBase -&gt; KnowledgeBase -&gt; RankedModels -&gt; RankedModels
-</span><a href="DefeasibleHelpers.html#baseRankAux"><span class="hs-identifier hs-var hs-var">baseRankAux</span></a></span></span><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span>  </span><span id="local-6989586621679040509"><span class="annot"><span class="annottext">KnowledgeBase
-</span><a href="#local-6989586621679040509"><span class="hs-identifier hs-var">kb</span></a></span></span><span> </span><span id="local-6989586621679040508"><span class="annot"><span class="annottext">RankedModels
-</span><a href="#local-6989586621679040508"><span class="hs-identifier hs-var">r</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">RankedModels
-</span><a href="#local-6989586621679040508"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="annot"><span class="annottext">RankedModels -&gt; RankedModels -&gt; RankedModels
+</span><a href="#local-6989586621679040529"><span class="hs-identifier hs-var">n</span></a></span><span> </span><span class="annot"><span class="annottext">[a]
+</span><a href="#local-6989586621679040527"><span class="hs-identifier hs-var">xs</span></a></span><span>
+</span><span id="line-29"></span><span>
+</span><span id="line-30"></span><span class="hs-comment">-----------------</span><span>
+</span><span id="line-31"></span><span class="hs-comment">-- AUXILIARIES --</span><span>
+</span><span id="line-32"></span><span class="hs-comment">-----------------</span><span>
+</span><span id="line-33"></span><span>
+</span><span id="line-34"></span><span class="hs-comment">-- | The 'baseRankAux' function is the auxiliary function for the 'baseRank' function.</span><span>
+</span><span id="line-35"></span><span class="annot"><a href="DefeasibleHelpers.html#baseRankAux"><span class="hs-identifier hs-type">baseRankAux</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="PropositionalTypes.html#KnowledgeBase"><span class="hs-identifier hs-type">KnowledgeBase</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="PropositionalTypes.html#KnowledgeBase"><span class="hs-identifier hs-type">KnowledgeBase</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="DefeasibleTypes.html#RankedModels"><span class="hs-identifier hs-type">RankedModels</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="DefeasibleTypes.html#RankedModels"><span class="hs-identifier hs-type">RankedModels</span></a></span><span>
+</span><span id="line-36"></span><span id="baseRankAux"><span class="annot"><span class="annottext">baseRankAux :: KnowledgeBase -&gt; KnowledgeBase -&gt; RankedModels -&gt; RankedModels
+</span><a href="DefeasibleHelpers.html#baseRankAux"><span class="hs-identifier hs-var hs-var">baseRankAux</span></a></span></span><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span>  </span><span id="local-6989586621679040525"><span class="annot"><span class="annottext">KnowledgeBase
+</span><a href="#local-6989586621679040525"><span class="hs-identifier hs-var">kb</span></a></span></span><span> </span><span id="local-6989586621679040524"><span class="annot"><span class="annottext">RankedModels
+</span><a href="#local-6989586621679040524"><span class="hs-identifier hs-var">r</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">RankedModels
+</span><a href="#local-6989586621679040524"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="annot"><span class="annottext">RankedModels -&gt; RankedModels -&gt; RankedModels
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">KnowledgeBase
-</span><a href="#local-6989586621679040509"><span class="hs-identifier hs-var">kb</span></a></span><span class="hs-special">]</span><span>
-</span><span id="line-36"></span><span class="annot"><a href="DefeasibleHelpers.html#baseRankAux"><span class="hs-identifier hs-var">baseRankAux</span></a></span><span> </span><span id="local-6989586621679040507"><span class="annot"><span class="annottext">KnowledgeBase
-</span><a href="#local-6989586621679040507"><span class="hs-identifier hs-var">mkb</span></a></span></span><span> </span><span id="local-6989586621679040506"><span class="annot"><span class="annottext">KnowledgeBase
-</span><a href="#local-6989586621679040506"><span class="hs-identifier hs-var">kb</span></a></span></span><span> </span><span id="local-6989586621679040505"><span class="annot"><span class="annottext">RankedModels
-</span><a href="#local-6989586621679040505"><span class="hs-identifier hs-var">r</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">KnowledgeBase -&gt; KnowledgeBase -&gt; RankedModels -&gt; RankedModels
+</span><a href="#local-6989586621679040525"><span class="hs-identifier hs-var">kb</span></a></span><span class="hs-special">]</span><span>
+</span><span id="line-37"></span><span class="annot"><a href="DefeasibleHelpers.html#baseRankAux"><span class="hs-identifier hs-var">baseRankAux</span></a></span><span> </span><span id="local-6989586621679040523"><span class="annot"><span class="annottext">KnowledgeBase
+</span><a href="#local-6989586621679040523"><span class="hs-identifier hs-var">mkb</span></a></span></span><span> </span><span id="local-6989586621679040522"><span class="annot"><span class="annottext">KnowledgeBase
+</span><a href="#local-6989586621679040522"><span class="hs-identifier hs-var">kb</span></a></span></span><span> </span><span id="local-6989586621679040521"><span class="annot"><span class="annottext">RankedModels
+</span><a href="#local-6989586621679040521"><span class="hs-identifier hs-var">r</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">KnowledgeBase -&gt; KnowledgeBase -&gt; RankedModels -&gt; RankedModels
 </span><a href="DefeasibleHelpers.html#baseRankAux"><span class="hs-identifier hs-var">baseRankAux</span></a></span><span> </span><span class="annot"><span class="annottext">KnowledgeBase
-</span><a href="#local-6989586621679040504"><span class="hs-identifier hs-var">result</span></a></span><span> </span><span class="annot"><span class="annottext">KnowledgeBase
-</span><a href="#local-6989586621679040506"><span class="hs-identifier hs-var">kb</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">RankedModels
-</span><a href="#local-6989586621679040505"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="annot"><span class="annottext">RankedModels -&gt; RankedModels -&gt; RankedModels
+</span><a href="#local-6989586621679040520"><span class="hs-identifier hs-var">result</span></a></span><span> </span><span class="annot"><span class="annottext">KnowledgeBase
+</span><a href="#local-6989586621679040522"><span class="hs-identifier hs-var">kb</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">RankedModels
+</span><a href="#local-6989586621679040521"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="annot"><span class="annottext">RankedModels -&gt; RankedModels -&gt; RankedModels
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">KnowledgeBase
-</span><a href="#local-6989586621679040503"><span class="hs-identifier hs-var">state</span></a></span><span class="hs-special">]</span><span class="hs-special">)</span><span>
-</span><span id="line-37"></span><span> </span><span class="hs-keyword">where</span><span>
-</span><span id="line-38"></span><span>  </span><span id="local-6989586621679040503"><span class="annot"><span class="annottext">state :: KnowledgeBase
-</span><a href="#local-6989586621679040503"><span class="hs-identifier hs-var hs-var">state</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
-</span><span id="line-39"></span><span>    </span><span class="hs-special">[</span><span> </span><span class="annot"><span class="annottext">Formula
-</span><a href="#local-6989586621679040502"><span class="hs-identifier hs-var">p</span></a></span><span>
-</span><span id="line-40"></span><span>    </span><span class="hs-glyph">|</span><span> </span><span id="local-6989586621679040502"><span class="annot"><span class="annottext">Formula
-</span><a href="#local-6989586621679040502"><span class="hs-identifier hs-var">p</span></a></span></span><span>    </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">KnowledgeBase
-</span><a href="#local-6989586621679040507"><span class="hs-identifier hs-var">mkb</span></a></span><span>
-</span><span id="line-41"></span><span>    </span><span class="hs-special">,</span><span> </span><span id="local-6989586621679040501"><span class="annot"><span class="annottext">Formula
-</span><a href="#local-6989586621679040501"><span class="hs-identifier hs-var">ante</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">Formula -&gt; Formula
+</span><a href="#local-6989586621679040519"><span class="hs-identifier hs-var">state</span></a></span><span class="hs-special">]</span><span class="hs-special">)</span><span>
+</span><span id="line-38"></span><span> </span><span class="hs-keyword">where</span><span>
+</span><span id="line-39"></span><span>  </span><span id="local-6989586621679040519"><span class="annot"><span class="annottext">state :: KnowledgeBase
+</span><a href="#local-6989586621679040519"><span class="hs-identifier hs-var hs-var">state</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><span id="line-40"></span><span>    </span><span class="hs-special">[</span><span> </span><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040518"><span class="hs-identifier hs-var">p</span></a></span><span>
+</span><span id="line-41"></span><span>    </span><span class="hs-glyph">|</span><span> </span><span id="local-6989586621679040518"><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040518"><span class="hs-identifier hs-var">p</span></a></span></span><span>    </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">KnowledgeBase
+</span><a href="#local-6989586621679040523"><span class="hs-identifier hs-var">mkb</span></a></span><span>
+</span><span id="line-42"></span><span>    </span><span class="hs-special">,</span><span> </span><span id="local-6989586621679040517"><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040517"><span class="hs-identifier hs-var">ante</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">Formula -&gt; Formula
 </span><a href="DefeasibleHelpers.html#antecedant"><span class="hs-identifier hs-var">antecedant</span></a></span><span> </span><span class="annot"><span class="annottext">Formula
-</span><a href="#local-6989586621679040502"><span class="hs-identifier hs-var">p</span></a></span><span class="hs-special">]</span><span>
-</span><span id="line-42"></span><span>    </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool
+</span><a href="#local-6989586621679040518"><span class="hs-identifier hs-var">p</span></a></span><span class="hs-special">]</span><span>
+</span><span id="line-43"></span><span>    </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool
 </span><span class="hs-identifier hs-var">not</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">(</span><span class="annot"><span class="annottext">KnowledgeBase
-</span><a href="#local-6989586621679040507"><span class="hs-identifier hs-var">mkb</span></a></span><span> </span><span class="annot"><span class="annottext">KnowledgeBase -&gt; KnowledgeBase -&gt; KnowledgeBase
+</span><a href="#local-6989586621679040523"><span class="hs-identifier hs-var">mkb</span></a></span><span> </span><span class="annot"><span class="annottext">KnowledgeBase -&gt; KnowledgeBase -&gt; KnowledgeBase
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">KnowledgeBase
-</span><a href="#local-6989586621679040506"><span class="hs-identifier hs-var">kb</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">KnowledgeBase -&gt; Formula -&gt; Bool
+</span><a href="#local-6989586621679040522"><span class="hs-identifier hs-var">kb</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">KnowledgeBase -&gt; Formula -&gt; Bool
 </span><a href="PropositionalLogic.html#entails"><span class="hs-operator hs-var">`entails`</span></a></span><span> </span><span class="annot"><span class="annottext">Formula -&gt; Formula
 </span><a href="PropositionalTypes.html#Not"><span class="hs-identifier hs-var">Not</span></a></span><span> </span><span class="annot"><span class="annottext">Formula
-</span><a href="#local-6989586621679040501"><span class="hs-identifier hs-var">ante</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-43"></span><span>    </span><span class="hs-special">]</span><span>
-</span><span id="line-44"></span><span>  </span><span id="local-6989586621679040504"><span class="annot"><span class="annottext">result :: KnowledgeBase
-</span><a href="#local-6989586621679040504"><span class="hs-identifier hs-var hs-var">result</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(Formula -&gt; Bool) -&gt; KnowledgeBase -&gt; KnowledgeBase
+</span><a href="#local-6989586621679040517"><span class="hs-identifier hs-var">ante</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-44"></span><span>    </span><span class="hs-special">]</span><span>
+</span><span id="line-45"></span><span>  </span><span id="local-6989586621679040520"><span class="annot"><span class="annottext">result :: KnowledgeBase
+</span><a href="#local-6989586621679040520"><span class="hs-identifier hs-var hs-var">result</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(Formula -&gt; Bool) -&gt; KnowledgeBase -&gt; KnowledgeBase
 forall a. (a -&gt; Bool) -&gt; [a] -&gt; [a]
 </span><span class="hs-identifier hs-var">filter</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Formula -&gt; KnowledgeBase -&gt; Bool
 forall (t :: * -&gt; *) a. (Foldable t, Eq a) =&gt; a -&gt; t a -&gt; Bool
 </span><span class="hs-operator hs-var">`notElem`</span></span><span> </span><span class="annot"><span class="annottext">KnowledgeBase
-</span><a href="#local-6989586621679040503"><span class="hs-identifier hs-var">state</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">KnowledgeBase
-</span><a href="#local-6989586621679040507"><span class="hs-identifier hs-var">mkb</span></a></span><span>
-</span><span id="line-45"></span><span>
-</span><span id="line-46"></span><span class="hs-comment">-- | The 'entailsRCAux' function is the auxiliary function for the 'entailsRC' function.</span><span>
-</span><span id="line-47"></span><span class="annot"><a href="DefeasibleHelpers.html#entailsRCAux"><span class="hs-identifier hs-type">entailsRCAux</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="DefeasibleTypes.html#RankedModels"><span class="hs-identifier hs-type">RankedModels</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="PropositionalTypes.html#Formula"><span class="hs-identifier hs-type">Formula</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Bool</span></span><span>
-</span><span id="line-48"></span><span id="entailsRCAux"><span class="annot"><span class="annottext">entailsRCAux :: RankedModels -&gt; Formula -&gt; Bool
-</span><a href="DefeasibleHelpers.html#entailsRCAux"><span class="hs-identifier hs-var hs-var">entailsRCAux</span></a></span></span><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span> </span><span id="local-6989586621679040496"><span class="annot"><span class="annottext">Formula
-</span><a href="#local-6989586621679040496"><span class="hs-identifier hs-var">p</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Formula -&gt; Bool
+</span><a href="#local-6989586621679040519"><span class="hs-identifier hs-var">state</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">KnowledgeBase
+</span><a href="#local-6989586621679040523"><span class="hs-identifier hs-var">mkb</span></a></span><span>
+</span><span id="line-46"></span><span>
+</span><span id="line-47"></span><span class="hs-comment">-- | The 'entailsRCAux' function is the auxiliary function for the 'entailsRC' function.</span><span>
+</span><span id="line-48"></span><span class="annot"><a href="DefeasibleHelpers.html#entailsRCAux"><span class="hs-identifier hs-type">entailsRCAux</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="DefeasibleTypes.html#RankedModels"><span class="hs-identifier hs-type">RankedModels</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="PropositionalTypes.html#Formula"><span class="hs-identifier hs-type">Formula</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Bool</span></span><span>
+</span><span id="line-49"></span><span id="entailsRCAux"><span class="annot"><span class="annottext">entailsRCAux :: RankedModels -&gt; Formula -&gt; Bool
+</span><a href="DefeasibleHelpers.html#entailsRCAux"><span class="hs-identifier hs-var hs-var">entailsRCAux</span></a></span></span><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span> </span><span id="local-6989586621679040512"><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040512"><span class="hs-identifier hs-var">p</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Formula -&gt; Bool
 </span><a href="PropositionalLogic.html#isValid"><span class="hs-identifier hs-var">isValid</span></a></span><span> </span><span class="annot"><span class="annottext">Formula
-</span><a href="#local-6989586621679040496"><span class="hs-identifier hs-var">p</span></a></span><span>
-</span><span id="line-49"></span><span class="annot"><a href="DefeasibleHelpers.html#entailsRCAux"><span class="hs-identifier hs-var">entailsRCAux</span></a></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679040494"><span class="annot"><span class="annottext">KnowledgeBase
-</span><a href="#local-6989586621679040494"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="annot"><span class="hs-glyph hs-type">:</span></span><span> </span><span id="local-6989586621679040493"><span class="annot"><span class="annottext">RankedModels
-</span><a href="#local-6989586621679040493"><span class="hs-identifier hs-var">se</span></a></span></span><span class="hs-special">)</span><span> </span><span id="local-6989586621679040492"><span class="annot"><span class="annottext">Formula
-</span><a href="#local-6989586621679040492"><span class="hs-identifier hs-var">p</span></a></span></span><span>
-</span><span id="line-50"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">RankedModels -&gt; Bool
+</span><a href="#local-6989586621679040512"><span class="hs-identifier hs-var">p</span></a></span><span>
+</span><span id="line-50"></span><span class="annot"><a href="DefeasibleHelpers.html#entailsRCAux"><span class="hs-identifier hs-var">entailsRCAux</span></a></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679040510"><span class="annot"><span class="annottext">KnowledgeBase
+</span><a href="#local-6989586621679040510"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="annot"><span class="hs-glyph hs-type">:</span></span><span> </span><span id="local-6989586621679040509"><span class="annot"><span class="annottext">RankedModels
+</span><a href="#local-6989586621679040509"><span class="hs-identifier hs-var">se</span></a></span></span><span class="hs-special">)</span><span> </span><span id="local-6989586621679040508"><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040508"><span class="hs-identifier hs-var">p</span></a></span></span><span>
+</span><span id="line-51"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">RankedModels -&gt; Bool
 forall (t :: * -&gt; *) a. Foldable t =&gt; t a -&gt; Bool
 </span><span class="hs-identifier hs-var">null</span></span><span> </span><span class="annot"><span class="annottext">RankedModels
-</span><a href="#local-6989586621679040493"><span class="hs-identifier hs-var">se</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">KnowledgeBase
-</span><a href="#local-6989586621679040490"><span class="hs-identifier hs-var">kb</span></a></span><span> </span><span class="annot"><span class="annottext">KnowledgeBase -&gt; Formula -&gt; Bool
+</span><a href="#local-6989586621679040509"><span class="hs-identifier hs-var">se</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">KnowledgeBase
+</span><a href="#local-6989586621679040506"><span class="hs-identifier hs-var">kb</span></a></span><span> </span><span class="annot"><span class="annottext">KnowledgeBase -&gt; Formula -&gt; Bool
 </span><a href="PropositionalLogic.html#entails"><span class="hs-operator hs-var">`entails`</span></a></span><span> </span><span class="annot"><span class="annottext">Formula -&gt; Formula
 </span><a href="PropositionalTypes.html#Not"><span class="hs-identifier hs-var">Not</span></a></span><span> </span><span class="annot"><span class="annottext">Formula
-</span><a href="#local-6989586621679040489"><span class="hs-identifier hs-var">ante</span></a></span><span>
-</span><span id="line-51"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Bool
+</span><a href="#local-6989586621679040505"><span class="hs-identifier hs-var">ante</span></a></span><span>
+</span><span id="line-52"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">otherwise</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">if</span><span> </span><span class="annot"><span class="annottext">KnowledgeBase
-</span><a href="#local-6989586621679040490"><span class="hs-identifier hs-var">kb</span></a></span><span> </span><span class="annot"><span class="annottext">KnowledgeBase -&gt; Formula -&gt; Bool
+</span><a href="#local-6989586621679040506"><span class="hs-identifier hs-var">kb</span></a></span><span> </span><span class="annot"><span class="annottext">KnowledgeBase -&gt; Formula -&gt; Bool
 </span><a href="PropositionalLogic.html#entails"><span class="hs-operator hs-var">`entails`</span></a></span><span> </span><span class="annot"><span class="annottext">Formula -&gt; Formula
 </span><a href="PropositionalTypes.html#Not"><span class="hs-identifier hs-var">Not</span></a></span><span> </span><span class="annot"><span class="annottext">Formula
-</span><a href="#local-6989586621679040489"><span class="hs-identifier hs-var">ante</span></a></span><span>
-</span><span id="line-52"></span><span>    </span><span class="hs-keyword">then</span><span> </span><span class="annot"><span class="annottext">RankedModels -&gt; Formula -&gt; Bool
+</span><a href="#local-6989586621679040505"><span class="hs-identifier hs-var">ante</span></a></span><span>
+</span><span id="line-53"></span><span>    </span><span class="hs-keyword">then</span><span> </span><span class="annot"><span class="annottext">RankedModels -&gt; Formula -&gt; Bool
 </span><a href="DefeasibleHelpers.html#entailsRCAux"><span class="hs-identifier hs-var">entailsRCAux</span></a></span><span> </span><span class="annot"><span class="annottext">RankedModels
-</span><a href="#local-6989586621679040493"><span class="hs-identifier hs-var">se</span></a></span><span> </span><span class="annot"><span class="annottext">Formula
-</span><a href="#local-6989586621679040492"><span class="hs-identifier hs-var">p</span></a></span><span>
-</span><span id="line-53"></span><span>    </span><span class="hs-keyword">else</span><span> </span><span class="annot"><span class="annottext">KnowledgeBase
-</span><a href="#local-6989586621679040490"><span class="hs-identifier hs-var">kb</span></a></span><span> </span><span class="annot"><span class="annottext">KnowledgeBase -&gt; Formula -&gt; Bool
+</span><a href="#local-6989586621679040509"><span class="hs-identifier hs-var">se</span></a></span><span> </span><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040508"><span class="hs-identifier hs-var">p</span></a></span><span>
+</span><span id="line-54"></span><span>    </span><span class="hs-keyword">else</span><span> </span><span class="annot"><span class="annottext">KnowledgeBase
+</span><a href="#local-6989586621679040506"><span class="hs-identifier hs-var">kb</span></a></span><span> </span><span class="annot"><span class="annottext">KnowledgeBase -&gt; Formula -&gt; Bool
 </span><a href="PropositionalLogic.html#entails"><span class="hs-operator hs-var">`entails`</span></a></span><span> </span><span class="annot"><span class="annottext">Formula
-</span><a href="#local-6989586621679040492"><span class="hs-identifier hs-var">p</span></a></span><span>
-</span><span id="line-54"></span><span> </span><span class="hs-keyword">where</span><span>
-</span><span id="line-55"></span><span>  </span><span id="local-6989586621679040490"><span class="annot"><span class="annottext">kb :: KnowledgeBase
-</span><a href="#local-6989586621679040490"><span class="hs-identifier hs-var hs-var">kb</span></a></span></span><span>   </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[</span><span> </span><span class="annot"><span class="annottext">Formula
-</span><a href="#local-6989586621679040488"><span class="hs-identifier hs-var">q</span></a></span><span> </span><span class="hs-glyph">|</span><span> </span><span id="local-6989586621679040487"><span class="annot"><span class="annottext">KnowledgeBase
-</span><a href="#local-6989586621679040487"><span class="hs-identifier hs-var">r</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">KnowledgeBase
-</span><a href="#local-6989586621679040494"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="annot"><span class="annottext">KnowledgeBase -&gt; RankedModels -&gt; RankedModels
+</span><a href="#local-6989586621679040508"><span class="hs-identifier hs-var">p</span></a></span><span>
+</span><span id="line-55"></span><span> </span><span class="hs-keyword">where</span><span>
+</span><span id="line-56"></span><span>  </span><span id="local-6989586621679040506"><span class="annot"><span class="annottext">kb :: KnowledgeBase
+</span><a href="#local-6989586621679040506"><span class="hs-identifier hs-var hs-var">kb</span></a></span></span><span>   </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[</span><span> </span><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040504"><span class="hs-identifier hs-var">q</span></a></span><span> </span><span class="hs-glyph">|</span><span> </span><span id="local-6989586621679040503"><span class="annot"><span class="annottext">KnowledgeBase
+</span><a href="#local-6989586621679040503"><span class="hs-identifier hs-var">r</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">KnowledgeBase
+</span><a href="#local-6989586621679040510"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="annot"><span class="annottext">KnowledgeBase -&gt; RankedModels -&gt; RankedModels
 forall a. a -&gt; [a] -&gt; [a]
 </span><span class="hs-glyph hs-var">:</span></span><span> </span><span class="annot"><span class="annottext">RankedModels
-</span><a href="#local-6989586621679040493"><span class="hs-identifier hs-var">se</span></a></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679040488"><span class="annot"><span class="annottext">Formula
-</span><a href="#local-6989586621679040488"><span class="hs-identifier hs-var">q</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">KnowledgeBase
-</span><a href="#local-6989586621679040487"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="hs-special">]</span><span>
-</span><span id="line-56"></span><span>  </span><span id="local-6989586621679040489"><span class="annot"><span class="annottext">ante :: Formula
-</span><a href="#local-6989586621679040489"><span class="hs-identifier hs-var hs-var">ante</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Formula -&gt; Formula
+</span><a href="#local-6989586621679040509"><span class="hs-identifier hs-var">se</span></a></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679040504"><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040504"><span class="hs-identifier hs-var">q</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">KnowledgeBase
+</span><a href="#local-6989586621679040503"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="hs-special">]</span><span>
+</span><span id="line-57"></span><span>  </span><span id="local-6989586621679040505"><span class="annot"><span class="annottext">ante :: Formula
+</span><a href="#local-6989586621679040505"><span class="hs-identifier hs-var hs-var">ante</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Formula -&gt; Formula
 </span><a href="DefeasibleHelpers.html#antecedant"><span class="hs-identifier hs-var">antecedant</span></a></span><span> </span><span class="annot"><span class="annottext">Formula
-</span><a href="#local-6989586621679040492"><span class="hs-identifier hs-var">p</span></a></span><span>
-</span><span id="line-57"></span><span>
-</span><span id="line-58"></span><span class="hs-comment">-- | The 'entailsLCAux' function is the auxiliary function for the 'entailsLC' function.</span><span>
-</span><span id="line-59"></span><span class="hs-comment">-- NOTE: This is a highly experimental function and it's correctness has not been validated.</span><span>
-</span><span id="line-60"></span><span class="annot"><a href="DefeasibleHelpers.html#entailsLCAux"><span class="hs-identifier hs-type">entailsLCAux</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="DefeasibleTypes.html#RankedModels"><span class="hs-identifier hs-type">RankedModels</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="PropositionalTypes.html#Formula"><span class="hs-identifier hs-type">Formula</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Bool</span></span><span>
-</span><span id="line-61"></span><span id="entailsLCAux"><span class="annot"><span class="annottext">entailsLCAux :: RankedModels -&gt; Formula -&gt; Bool
-</span><a href="DefeasibleHelpers.html#entailsLCAux"><span class="hs-identifier hs-var hs-var">entailsLCAux</span></a></span></span><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span> </span><span id="local-6989586621679040485"><span class="annot"><span class="annottext">Formula
-</span><a href="#local-6989586621679040485"><span class="hs-identifier hs-var">p</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Formula -&gt; Bool
+</span><a href="#local-6989586621679040508"><span class="hs-identifier hs-var">p</span></a></span><span>
+</span><span id="line-58"></span><span>
+</span><span id="line-59"></span><span class="hs-comment">-- | The 'entailsLCAux' function is the auxiliary function for the 'entailsLC' function.</span><span>
+</span><span id="line-60"></span><span class="hs-comment">-- NOTE: This is a highly experimental function and its correctness has not been validated.</span><span>
+</span><span id="line-61"></span><span class="annot"><a href="DefeasibleHelpers.html#entailsLCAux"><span class="hs-identifier hs-type">entailsLCAux</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="DefeasibleTypes.html#RankedModels"><span class="hs-identifier hs-type">RankedModels</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="PropositionalTypes.html#Formula"><span class="hs-identifier hs-type">Formula</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Bool</span></span><span>
+</span><span id="line-62"></span><span id="entailsLCAux"><span class="annot"><span class="annottext">entailsLCAux :: RankedModels -&gt; Formula -&gt; Bool
+</span><a href="DefeasibleHelpers.html#entailsLCAux"><span class="hs-identifier hs-var hs-var">entailsLCAux</span></a></span></span><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span> </span><span id="local-6989586621679040501"><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040501"><span class="hs-identifier hs-var">p</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Formula -&gt; Bool
 </span><a href="PropositionalLogic.html#isValid"><span class="hs-identifier hs-var">isValid</span></a></span><span> </span><span class="annot"><span class="annottext">Formula
-</span><a href="#local-6989586621679040485"><span class="hs-identifier hs-var">p</span></a></span><span>
-</span><span id="line-62"></span><span class="annot"><a href="DefeasibleHelpers.html#entailsLCAux"><span class="hs-identifier hs-var">entailsLCAux</span></a></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679040484"><span class="annot"><span class="annottext">KnowledgeBase
-</span><a href="#local-6989586621679040484"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="annot"><span class="hs-glyph hs-type">:</span></span><span> </span><span id="local-6989586621679040483"><span class="annot"><span class="annottext">RankedModels
-</span><a href="#local-6989586621679040483"><span class="hs-identifier hs-var">se</span></a></span></span><span class="hs-special">)</span><span> </span><span id="local-6989586621679040482"><span class="annot"><span class="annottext">Formula
-</span><a href="#local-6989586621679040482"><span class="hs-identifier hs-var">p</span></a></span></span><span>
-</span><span id="line-63"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">RankedModels -&gt; Bool
+</span><a href="#local-6989586621679040501"><span class="hs-identifier hs-var">p</span></a></span><span>
+</span><span id="line-63"></span><span class="annot"><a href="DefeasibleHelpers.html#entailsLCAux"><span class="hs-identifier hs-var">entailsLCAux</span></a></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679040500"><span class="annot"><span class="annottext">KnowledgeBase
+</span><a href="#local-6989586621679040500"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="annot"><span class="hs-glyph hs-type">:</span></span><span> </span><span id="local-6989586621679040499"><span class="annot"><span class="annottext">RankedModels
+</span><a href="#local-6989586621679040499"><span class="hs-identifier hs-var">se</span></a></span></span><span class="hs-special">)</span><span> </span><span id="local-6989586621679040498"><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040498"><span class="hs-identifier hs-var">p</span></a></span></span><span>
+</span><span id="line-64"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">RankedModels -&gt; Bool
 forall (t :: * -&gt; *) a. Foldable t =&gt; t a -&gt; Bool
 </span><span class="hs-identifier hs-var">null</span></span><span> </span><span class="annot"><span class="annottext">RankedModels
-</span><a href="#local-6989586621679040483"><span class="hs-identifier hs-var">se</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">KnowledgeBase
-</span><a href="#local-6989586621679040481"><span class="hs-identifier hs-var">kb</span></a></span><span> </span><span class="annot"><span class="annottext">KnowledgeBase -&gt; Formula -&gt; Bool
+</span><a href="#local-6989586621679040499"><span class="hs-identifier hs-var">se</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">KnowledgeBase
+</span><a href="#local-6989586621679040497"><span class="hs-identifier hs-var">kb</span></a></span><span> </span><span class="annot"><span class="annottext">KnowledgeBase -&gt; Formula -&gt; Bool
 </span><a href="PropositionalLogic.html#entails"><span class="hs-operator hs-var">`entails`</span></a></span><span> </span><span class="annot"><span class="annottext">Formula -&gt; Formula
 </span><a href="PropositionalTypes.html#Not"><span class="hs-identifier hs-var">Not</span></a></span><span> </span><span class="annot"><span class="annottext">Formula
-</span><a href="#local-6989586621679040480"><span class="hs-identifier hs-var">ante</span></a></span><span>
-</span><span id="line-64"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Bool
+</span><a href="#local-6989586621679040496"><span class="hs-identifier hs-var">ante</span></a></span><span>
+</span><span id="line-65"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">otherwise</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">if</span><span> </span><span class="annot"><span class="annottext">KnowledgeBase -&gt; Bool
 forall (t :: * -&gt; *) a. Foldable t =&gt; t a -&gt; Bool
 </span><span class="hs-identifier hs-var">null</span></span><span> </span><span class="annot"><span class="annottext">KnowledgeBase
-</span><a href="#local-6989586621679040479"><span class="hs-identifier hs-var">selectedRefinement</span></a></span><span>
-</span><span id="line-65"></span><span>    </span><span class="hs-keyword">then</span><span> </span><span class="annot"><span class="annottext">RankedModels -&gt; Formula -&gt; Bool
+</span><a href="#local-6989586621679040495"><span class="hs-identifier hs-var">selectedRefinement</span></a></span><span>
+</span><span id="line-66"></span><span>    </span><span class="hs-keyword">then</span><span> </span><span class="annot"><span class="annottext">RankedModels -&gt; Formula -&gt; Bool
 </span><a href="DefeasibleHelpers.html#entailsLCAux"><span class="hs-identifier hs-var">entailsLCAux</span></a></span><span> </span><span class="annot"><span class="annottext">RankedModels
-</span><a href="#local-6989586621679040483"><span class="hs-identifier hs-var">se</span></a></span><span> </span><span class="annot"><span class="annottext">Formula
-</span><a href="#local-6989586621679040482"><span class="hs-identifier hs-var">p</span></a></span><span>
-</span><span id="line-66"></span><span>    </span><span class="hs-keyword">else</span><span> </span><span class="annot"><span class="annottext">KnowledgeBase
-</span><a href="#local-6989586621679040481"><span class="hs-identifier hs-var">kb</span></a></span><span> </span><span class="annot"><span class="annottext">KnowledgeBase -&gt; Formula -&gt; Bool
+</span><a href="#local-6989586621679040499"><span class="hs-identifier hs-var">se</span></a></span><span> </span><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040498"><span class="hs-identifier hs-var">p</span></a></span><span>
+</span><span id="line-67"></span><span>    </span><span class="hs-keyword">else</span><span> </span><span class="annot"><span class="annottext">KnowledgeBase
+</span><a href="#local-6989586621679040497"><span class="hs-identifier hs-var">kb</span></a></span><span> </span><span class="annot"><span class="annottext">KnowledgeBase -&gt; Formula -&gt; Bool
 </span><a href="PropositionalLogic.html#entails"><span class="hs-operator hs-var">`entails`</span></a></span><span> </span><span class="annot"><span class="annottext">Formula
-</span><a href="#local-6989586621679040482"><span class="hs-identifier hs-var">p</span></a></span><span>
-</span><span id="line-67"></span><span> </span><span class="hs-keyword">where</span><span>
-</span><span id="line-68"></span><span>  </span><span id="local-6989586621679040480"><span class="annot"><span class="annottext">ante :: Formula
-</span><a href="#local-6989586621679040480"><span class="hs-identifier hs-var hs-var">ante</span></a></span></span><span>        </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Formula -&gt; Formula
+</span><a href="#local-6989586621679040498"><span class="hs-identifier hs-var">p</span></a></span><span>
+</span><span id="line-68"></span><span> </span><span class="hs-keyword">where</span><span>
+</span><span id="line-69"></span><span>  </span><span id="local-6989586621679040496"><span class="annot"><span class="annottext">ante :: Formula
+</span><a href="#local-6989586621679040496"><span class="hs-identifier hs-var hs-var">ante</span></a></span></span><span>        </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Formula -&gt; Formula
 </span><a href="DefeasibleHelpers.html#antecedant"><span class="hs-identifier hs-var">antecedant</span></a></span><span> </span><span class="annot"><span class="annottext">Formula
-</span><a href="#local-6989586621679040482"><span class="hs-identifier hs-var">p</span></a></span><span>
-</span><span id="line-69"></span><span>  </span><span id="local-6989586621679040478"><span class="annot"><span class="annottext">stateLength :: Int
-</span><a href="#local-6989586621679040478"><span class="hs-identifier hs-var hs-var">stateLength</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">KnowledgeBase -&gt; Int
+</span><a href="#local-6989586621679040498"><span class="hs-identifier hs-var">p</span></a></span><span>
+</span><span id="line-70"></span><span>  </span><span id="local-6989586621679040494"><span class="annot"><span class="annottext">stateLength :: Int
+</span><a href="#local-6989586621679040494"><span class="hs-identifier hs-var hs-var">stateLength</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">KnowledgeBase -&gt; Int
 forall (t :: * -&gt; *) a. Foldable t =&gt; t a -&gt; Int
 </span><span class="hs-identifier hs-var">length</span></span><span> </span><span class="annot"><span class="annottext">KnowledgeBase
-</span><a href="#local-6989586621679040484"><span class="hs-identifier hs-var">s</span></a></span><span>
-</span><span id="line-70"></span><span>  </span><span id="local-6989586621679040476"><span class="annot"><span class="annottext">refinements :: RankedModels
-</span><a href="#local-6989586621679040476"><span class="hs-identifier hs-var hs-var">refinements</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
-</span><span id="line-71"></span><span>    </span><span class="hs-special">[</span><span> </span><span class="annot"><span class="annottext">KnowledgeBase
-</span><a href="#local-6989586621679040475"><span class="hs-identifier hs-var">stateComb</span></a></span><span>
-</span><span id="line-72"></span><span>    </span><span class="hs-glyph">|</span><span> </span><span id="local-6989586621679040474"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679040474"><span class="hs-identifier hs-var">i</span></a></span></span><span>         </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">[Int] -&gt; [Int]
+</span><a href="#local-6989586621679040500"><span class="hs-identifier hs-var">s</span></a></span><span>
+</span><span id="line-71"></span><span>  </span><span id="local-6989586621679040492"><span class="annot"><span class="annottext">refinements :: RankedModels
+</span><a href="#local-6989586621679040492"><span class="hs-identifier hs-var hs-var">refinements</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><span id="line-72"></span><span>    </span><span class="hs-special">[</span><span> </span><span class="annot"><span class="annottext">KnowledgeBase
+</span><a href="#local-6989586621679040491"><span class="hs-identifier hs-var">stateComb</span></a></span><span>
+</span><span id="line-73"></span><span>    </span><span class="hs-glyph">|</span><span> </span><span id="local-6989586621679040490"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679040490"><span class="hs-identifier hs-var">i</span></a></span></span><span>         </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">[Int] -&gt; [Int]
 forall a. [a] -&gt; [a]
 </span><span class="hs-identifier hs-var">reverse</span></span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">Int
 </span><span class="hs-number">1</span></span><span> </span><span class="hs-glyph">..</span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679040478"><span class="hs-identifier hs-var">stateLength</span></a></span><span class="hs-special">]</span><span>
-</span><span id="line-73"></span><span>    </span><span class="hs-special">,</span><span> </span><span id="local-6989586621679040475"><span class="annot"><span class="annottext">KnowledgeBase
-</span><a href="#local-6989586621679040475"><span class="hs-identifier hs-var">stateComb</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Int -&gt; KnowledgeBase -&gt; RankedModels
+</span><a href="#local-6989586621679040494"><span class="hs-identifier hs-var">stateLength</span></a></span><span class="hs-special">]</span><span>
+</span><span id="line-74"></span><span>    </span><span class="hs-special">,</span><span> </span><span id="local-6989586621679040491"><span class="annot"><span class="annottext">KnowledgeBase
+</span><a href="#local-6989586621679040491"><span class="hs-identifier hs-var">stateComb</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Int -&gt; KnowledgeBase -&gt; RankedModels
 forall a. Int -&gt; [a] -&gt; [[a]]
 </span><a href="DefeasibleHelpers.html#combinations"><span class="hs-identifier hs-var">combinations</span></a></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679040474"><span class="hs-identifier hs-var">i</span></a></span><span> </span><span class="annot"><span class="annottext">KnowledgeBase
-</span><a href="#local-6989586621679040484"><span class="hs-identifier hs-var">s</span></a></span><span>
-</span><span id="line-74"></span><span>    </span><span class="hs-special">]</span><span>
-</span><span id="line-75"></span><span>  </span><span id="local-6989586621679040479"><span class="annot"><span class="annottext">selectedRefinement :: KnowledgeBase
-</span><a href="#local-6989586621679040479"><span class="hs-identifier hs-var hs-var">selectedRefinement</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">RankedModels -&gt; KnowledgeBase
+</span><a href="#local-6989586621679040490"><span class="hs-identifier hs-var">i</span></a></span><span> </span><span class="annot"><span class="annottext">KnowledgeBase
+</span><a href="#local-6989586621679040500"><span class="hs-identifier hs-var">s</span></a></span><span>
+</span><span id="line-75"></span><span>    </span><span class="hs-special">]</span><span>
+</span><span id="line-76"></span><span>  </span><span id="local-6989586621679040495"><span class="annot"><span class="annottext">selectedRefinement :: KnowledgeBase
+</span><a href="#local-6989586621679040495"><span class="hs-identifier hs-var hs-var">selectedRefinement</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">RankedModels -&gt; KnowledgeBase
 forall a. [a] -&gt; a
 </span><span class="hs-identifier hs-var">head</span></span><span>
-</span><span id="line-76"></span><span>    </span><span class="hs-special">[</span><span> </span><span class="annot"><span class="annottext">KnowledgeBase
-</span><a href="#local-6989586621679040471"><span class="hs-identifier hs-var">state</span></a></span><span>
-</span><span id="line-77"></span><span>    </span><span class="hs-glyph">|</span><span> </span><span id="local-6989586621679040471"><span class="annot"><span class="annottext">KnowledgeBase
-</span><a href="#local-6989586621679040471"><span class="hs-identifier hs-var">state</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">RankedModels
-</span><a href="#local-6989586621679040476"><span class="hs-identifier hs-var">refinements</span></a></span><span>
-</span><span id="line-78"></span><span>    </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">KnowledgeBase -&gt; Formula -&gt; Bool
+</span><span id="line-77"></span><span>    </span><span class="hs-special">[</span><span> </span><span class="annot"><span class="annottext">KnowledgeBase
+</span><a href="#local-6989586621679040487"><span class="hs-identifier hs-var">state</span></a></span><span>
+</span><span id="line-78"></span><span>    </span><span class="hs-glyph">|</span><span> </span><span id="local-6989586621679040487"><span class="annot"><span class="annottext">KnowledgeBase
+</span><a href="#local-6989586621679040487"><span class="hs-identifier hs-var">state</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">RankedModels
+</span><a href="#local-6989586621679040492"><span class="hs-identifier hs-var">refinements</span></a></span><span>
+</span><span id="line-79"></span><span>    </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">KnowledgeBase -&gt; Formula -&gt; Bool
 </span><a href="PropositionalLogic.html#entails"><span class="hs-identifier hs-var">entails</span></a></span><span> </span><span class="hs-special">[</span><span> </span><span class="annot"><span class="annottext">Formula
-</span><a href="#local-6989586621679040470"><span class="hs-identifier hs-var">q</span></a></span><span> </span><span class="hs-glyph">|</span><span> </span><span id="local-6989586621679040469"><span class="annot"><span class="annottext">KnowledgeBase
-</span><a href="#local-6989586621679040469"><span class="hs-identifier hs-var">r</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">KnowledgeBase
-</span><a href="#local-6989586621679040471"><span class="hs-identifier hs-var">state</span></a></span><span> </span><span class="annot"><span class="annottext">KnowledgeBase -&gt; RankedModels -&gt; RankedModels
+</span><a href="#local-6989586621679040486"><span class="hs-identifier hs-var">q</span></a></span><span> </span><span class="hs-glyph">|</span><span> </span><span id="local-6989586621679040485"><span class="annot"><span class="annottext">KnowledgeBase
+</span><a href="#local-6989586621679040485"><span class="hs-identifier hs-var">r</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">KnowledgeBase
+</span><a href="#local-6989586621679040487"><span class="hs-identifier hs-var">state</span></a></span><span> </span><span class="annot"><span class="annottext">KnowledgeBase -&gt; RankedModels -&gt; RankedModels
 forall a. a -&gt; [a] -&gt; [a]
 </span><span class="hs-glyph hs-var">:</span></span><span> </span><span class="annot"><span class="annottext">RankedModels
-</span><a href="#local-6989586621679040483"><span class="hs-identifier hs-var">se</span></a></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679040470"><span class="annot"><span class="annottext">Formula
-</span><a href="#local-6989586621679040470"><span class="hs-identifier hs-var">q</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">KnowledgeBase
-</span><a href="#local-6989586621679040469"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="hs-special">]</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Formula -&gt; Formula
+</span><a href="#local-6989586621679040499"><span class="hs-identifier hs-var">se</span></a></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679040486"><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040486"><span class="hs-identifier hs-var">q</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">KnowledgeBase
+</span><a href="#local-6989586621679040485"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="hs-special">]</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Formula -&gt; Formula
 </span><a href="PropositionalTypes.html#Not"><span class="hs-identifier hs-var">Not</span></a></span><span> </span><span class="annot"><span class="annottext">Formula
-</span><a href="#local-6989586621679040480"><span class="hs-identifier hs-var">ante</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-79"></span><span>    </span><span class="hs-special">]</span><span>
-</span><span id="line-80"></span><span>  </span><span id="local-6989586621679040468"><span class="annot"><span class="annottext">noRefinement :: Bool
-</span><a href="#local-6989586621679040468"><span class="hs-identifier hs-var hs-var">noRefinement</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">KnowledgeBase -&gt; Bool
+</span><a href="#local-6989586621679040496"><span class="hs-identifier hs-var">ante</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-80"></span><span>    </span><span class="hs-special">]</span><span>
+</span><span id="line-81"></span><span>  </span><span id="local-6989586621679040484"><span class="annot"><span class="annottext">noRefinement :: Bool
+</span><a href="#local-6989586621679040484"><span class="hs-identifier hs-var hs-var">noRefinement</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">KnowledgeBase -&gt; Bool
 forall (t :: * -&gt; *) a. Foldable t =&gt; t a -&gt; Bool
 </span><span class="hs-identifier hs-var">null</span></span><span> </span><span class="annot"><span class="annottext">KnowledgeBase
-</span><a href="#local-6989586621679040479"><span class="hs-identifier hs-var">selectedRefinement</span></a></span><span>
-</span><span id="line-81"></span><span>  </span><span id="local-6989586621679040481"><span class="annot"><span class="annottext">kb :: KnowledgeBase
-</span><a href="#local-6989586621679040481"><span class="hs-identifier hs-var hs-var">kb</span></a></span></span><span>           </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[</span><span> </span><span class="annot"><span class="annottext">Formula
-</span><a href="#local-6989586621679040467"><span class="hs-identifier hs-var">q</span></a></span><span> </span><span class="hs-glyph">|</span><span> </span><span id="local-6989586621679040466"><span class="annot"><span class="annottext">KnowledgeBase
-</span><a href="#local-6989586621679040466"><span class="hs-identifier hs-var">r</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">KnowledgeBase
-</span><a href="#local-6989586621679040479"><span class="hs-identifier hs-var">selectedRefinement</span></a></span><span> </span><span class="annot"><span class="annottext">KnowledgeBase -&gt; RankedModels -&gt; RankedModels
+</span><a href="#local-6989586621679040495"><span class="hs-identifier hs-var">selectedRefinement</span></a></span><span>
+</span><span id="line-82"></span><span>  </span><span id="local-6989586621679040497"><span class="annot"><span class="annottext">kb :: KnowledgeBase
+</span><a href="#local-6989586621679040497"><span class="hs-identifier hs-var hs-var">kb</span></a></span></span><span>           </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[</span><span> </span><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040483"><span class="hs-identifier hs-var">q</span></a></span><span> </span><span class="hs-glyph">|</span><span> </span><span id="local-6989586621679040482"><span class="annot"><span class="annottext">KnowledgeBase
+</span><a href="#local-6989586621679040482"><span class="hs-identifier hs-var">r</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">KnowledgeBase
+</span><a href="#local-6989586621679040495"><span class="hs-identifier hs-var">selectedRefinement</span></a></span><span> </span><span class="annot"><span class="annottext">KnowledgeBase -&gt; RankedModels -&gt; RankedModels
 forall a. a -&gt; [a] -&gt; [a]
 </span><span class="hs-glyph hs-var">:</span></span><span> </span><span class="annot"><span class="annottext">RankedModels
-</span><a href="#local-6989586621679040483"><span class="hs-identifier hs-var">se</span></a></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679040467"><span class="annot"><span class="annottext">Formula
-</span><a href="#local-6989586621679040467"><span class="hs-identifier hs-var">q</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">KnowledgeBase
-</span><a href="#local-6989586621679040466"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="hs-special">]</span><span>
-</span><span id="line-82"></span></pre></body></html>
+</span><a href="#local-6989586621679040499"><span class="hs-identifier hs-var">se</span></a></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679040483"><span class="annot"><span class="annottext">Formula
+</span><a href="#local-6989586621679040483"><span class="hs-identifier hs-var">q</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">KnowledgeBase
+</span><a href="#local-6989586621679040482"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="hs-special">]</span><span>
+</span><span id="line-83"></span></pre></body></html>

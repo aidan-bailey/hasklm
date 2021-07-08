@@ -118,6 +118,10 @@ isValid :: Formula -> Bool
 --   <a>Valuation</a>s) of the given <a>Formula</a>.
 models :: KnowledgeBase -> [Valuation]
 
+-- | The <a>isSatisfiable</a> function returns the satisfiability of the
+--   given <a>KnowledgeBase</a>.
+isSatisfiable :: KnowledgeBase -> Bool
+
 -- | The <a>entails</a> function returns whether or not the given
 --   <a>KnowledgeBase</a> entails the given <a>Formula</a>.
 entails :: KnowledgeBase -> Formula -> Bool
@@ -158,7 +162,8 @@ module DefeasibleHelpers
 --   <a>Formula</a>.
 antecedant :: Formula -> Formula
 
--- | The <a>combinations</a> function returns the
+-- | The <a>combinations</a> function returns the combinatorial subsets of
+--   a list of a specified size.
 combinations :: Int -> [a] -> [[a]]
 
 -- | The <a>baseRankAux</a> function is the auxiliary function for the
@@ -171,7 +176,7 @@ entailsRCAux :: RankedModels -> Formula -> Bool
 
 -- | The <a>entailsLCAux</a> function is the auxiliary function for the
 --   <tt>entailsLC</tt> function. NOTE: This is a highly experimental
---   function and it's correctness has not been validated.
+--   function and its correctness has not been validated.
 entailsLCAux :: RankedModels -> Formula -> Bool
 
 
@@ -199,6 +204,6 @@ entailsRC :: JointKnowledgeBase -> DefeasibleImplication -> Bool
 -- | The <a>entailsLC</a> function returns whether or not the given
 --   <tt>DefeasibleInterpretation</tt> is defeasibly entailed (using
 --   Lexicographic Closure) by the given <a>JointKnowledgeBase</a>. NOTE:
---   This is a highly experimental function and it's correctness has not
+--   This is a highly experimental function and its correctness has not
 --   been validated.
 entailsLC :: JointKnowledgeBase -> DefeasibleImplication -> Bool
