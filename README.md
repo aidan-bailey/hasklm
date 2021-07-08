@@ -13,11 +13,11 @@ The most commonly used commands are described below.
 - Run Tests: `stack test`
 - Use Application: `stack repl --only-main`
 
+## Examples
+
 Examples of defeasible entailment checking, using Rational Closure, can be found in the [test file](https://github.com/aidanjbailey/hasklm/blob/master/test/MyLibTest.hs).
 
-Here is a more detailed example:
-
-**RationalClosure Example**
+### RationalClosure Example
 
 This example will be in reference to the [birds and penguins](https://projects.cs.uct.ac.za/honsproj/cgi-bin/view/2019/morris_ross.zip/images/comic-penguins-strip.png) classical reasoning problem.
 
