@@ -79,23 +79,23 @@ forall a. Int -&gt; [a] -&gt; [[a]]
 </span><span id="line-32"></span><span class="hs-comment">-----------------</span><span>
 </span><span id="line-33"></span><span>
 </span><span id="line-34"></span><span class="hs-comment">-- | The 'baseRankAux' function is the auxiliary function for the 'baseRank' function.</span><span>
-</span><span id="line-35"></span><span class="annot"><a href="DefeasibleHelpers.html#baseRankAux"><span class="hs-identifier hs-type">baseRankAux</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="PropositionalTypes.html#KnowledgeBase"><span class="hs-identifier hs-type">KnowledgeBase</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="PropositionalTypes.html#KnowledgeBase"><span class="hs-identifier hs-type">KnowledgeBase</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="DefeasibleTypes.html#RankedModels"><span class="hs-identifier hs-type">RankedModels</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="DefeasibleTypes.html#RankedModels"><span class="hs-identifier hs-type">RankedModels</span></a></span><span>
-</span><span id="line-36"></span><span id="baseRankAux"><span class="annot"><span class="annottext">baseRankAux :: KnowledgeBase -&gt; KnowledgeBase -&gt; RankedModels -&gt; RankedModels
+</span><span id="line-35"></span><span class="annot"><a href="DefeasibleHelpers.html#baseRankAux"><span class="hs-identifier hs-type">baseRankAux</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="PropositionalTypes.html#KnowledgeBase"><span class="hs-identifier hs-type">KnowledgeBase</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="PropositionalTypes.html#KnowledgeBase"><span class="hs-identifier hs-type">KnowledgeBase</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="DefeasibleTypes.html#RankedStates"><span class="hs-identifier hs-type">RankedStates</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="DefeasibleTypes.html#RankedStates"><span class="hs-identifier hs-type">RankedStates</span></a></span><span>
+</span><span id="line-36"></span><span id="baseRankAux"><span class="annot"><span class="annottext">baseRankAux :: KnowledgeBase -&gt; KnowledgeBase -&gt; RankedStates -&gt; RankedStates
 </span><a href="DefeasibleHelpers.html#baseRankAux"><span class="hs-identifier hs-var hs-var">baseRankAux</span></a></span></span><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span>  </span><span id="local-6989586621679040525"><span class="annot"><span class="annottext">KnowledgeBase
-</span><a href="#local-6989586621679040525"><span class="hs-identifier hs-var">kb</span></a></span></span><span> </span><span id="local-6989586621679040524"><span class="annot"><span class="annottext">RankedModels
-</span><a href="#local-6989586621679040524"><span class="hs-identifier hs-var">r</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">RankedModels
-</span><a href="#local-6989586621679040524"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="annot"><span class="annottext">RankedModels -&gt; RankedModels -&gt; RankedModels
+</span><a href="#local-6989586621679040525"><span class="hs-identifier hs-var">kb</span></a></span></span><span> </span><span id="local-6989586621679040524"><span class="annot"><span class="annottext">RankedStates
+</span><a href="#local-6989586621679040524"><span class="hs-identifier hs-var">r</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">RankedStates
+</span><a href="#local-6989586621679040524"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="annot"><span class="annottext">RankedStates -&gt; RankedStates -&gt; RankedStates
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">KnowledgeBase
 </span><a href="#local-6989586621679040525"><span class="hs-identifier hs-var">kb</span></a></span><span class="hs-special">]</span><span>
 </span><span id="line-37"></span><span class="annot"><a href="DefeasibleHelpers.html#baseRankAux"><span class="hs-identifier hs-var">baseRankAux</span></a></span><span> </span><span id="local-6989586621679040523"><span class="annot"><span class="annottext">KnowledgeBase
 </span><a href="#local-6989586621679040523"><span class="hs-identifier hs-var">mkb</span></a></span></span><span> </span><span id="local-6989586621679040522"><span class="annot"><span class="annottext">KnowledgeBase
-</span><a href="#local-6989586621679040522"><span class="hs-identifier hs-var">kb</span></a></span></span><span> </span><span id="local-6989586621679040521"><span class="annot"><span class="annottext">RankedModels
-</span><a href="#local-6989586621679040521"><span class="hs-identifier hs-var">r</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">KnowledgeBase -&gt; KnowledgeBase -&gt; RankedModels -&gt; RankedModels
+</span><a href="#local-6989586621679040522"><span class="hs-identifier hs-var">kb</span></a></span></span><span> </span><span id="local-6989586621679040521"><span class="annot"><span class="annottext">RankedStates
+</span><a href="#local-6989586621679040521"><span class="hs-identifier hs-var">r</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">KnowledgeBase -&gt; KnowledgeBase -&gt; RankedStates -&gt; RankedStates
 </span><a href="DefeasibleHelpers.html#baseRankAux"><span class="hs-identifier hs-var">baseRankAux</span></a></span><span> </span><span class="annot"><span class="annottext">KnowledgeBase
 </span><a href="#local-6989586621679040520"><span class="hs-identifier hs-var">result</span></a></span><span> </span><span class="annot"><span class="annottext">KnowledgeBase
-</span><a href="#local-6989586621679040522"><span class="hs-identifier hs-var">kb</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">RankedModels
-</span><a href="#local-6989586621679040521"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="annot"><span class="annottext">RankedModels -&gt; RankedModels -&gt; RankedModels
+</span><a href="#local-6989586621679040522"><span class="hs-identifier hs-var">kb</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">RankedStates
+</span><a href="#local-6989586621679040521"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="annot"><span class="annottext">RankedStates -&gt; RankedStates -&gt; RankedStates
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">KnowledgeBase
 </span><a href="#local-6989586621679040519"><span class="hs-identifier hs-var">state</span></a></span><span class="hs-special">]</span><span class="hs-special">)</span><span>
@@ -131,19 +131,19 @@ forall (t :: * -&gt; *) a. (Foldable t, Eq a) =&gt; a -&gt; t a -&gt; Bool
 </span><a href="#local-6989586621679040523"><span class="hs-identifier hs-var">mkb</span></a></span><span>
 </span><span id="line-46"></span><span>
 </span><span id="line-47"></span><span class="hs-comment">-- | The 'entailsRCAux' function is the auxiliary function for the 'entailsRC' function.</span><span>
-</span><span id="line-48"></span><span class="annot"><a href="DefeasibleHelpers.html#entailsRCAux"><span class="hs-identifier hs-type">entailsRCAux</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="DefeasibleTypes.html#RankedModels"><span class="hs-identifier hs-type">RankedModels</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="PropositionalTypes.html#Formula"><span class="hs-identifier hs-type">Formula</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Bool</span></span><span>
-</span><span id="line-49"></span><span id="entailsRCAux"><span class="annot"><span class="annottext">entailsRCAux :: RankedModels -&gt; Formula -&gt; Bool
+</span><span id="line-48"></span><span class="annot"><a href="DefeasibleHelpers.html#entailsRCAux"><span class="hs-identifier hs-type">entailsRCAux</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="DefeasibleTypes.html#RankedStates"><span class="hs-identifier hs-type">RankedStates</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="PropositionalTypes.html#Formula"><span class="hs-identifier hs-type">Formula</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Bool</span></span><span>
+</span><span id="line-49"></span><span id="entailsRCAux"><span class="annot"><span class="annottext">entailsRCAux :: RankedStates -&gt; Formula -&gt; Bool
 </span><a href="DefeasibleHelpers.html#entailsRCAux"><span class="hs-identifier hs-var hs-var">entailsRCAux</span></a></span></span><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span> </span><span id="local-6989586621679040512"><span class="annot"><span class="annottext">Formula
 </span><a href="#local-6989586621679040512"><span class="hs-identifier hs-var">p</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Formula -&gt; Bool
 </span><a href="PropositionalLogic.html#isValid"><span class="hs-identifier hs-var">isValid</span></a></span><span> </span><span class="annot"><span class="annottext">Formula
 </span><a href="#local-6989586621679040512"><span class="hs-identifier hs-var">p</span></a></span><span>
 </span><span id="line-50"></span><span class="annot"><a href="DefeasibleHelpers.html#entailsRCAux"><span class="hs-identifier hs-var">entailsRCAux</span></a></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679040510"><span class="annot"><span class="annottext">KnowledgeBase
-</span><a href="#local-6989586621679040510"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="annot"><span class="hs-glyph hs-type">:</span></span><span> </span><span id="local-6989586621679040509"><span class="annot"><span class="annottext">RankedModels
+</span><a href="#local-6989586621679040510"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="annot"><span class="hs-glyph hs-type">:</span></span><span> </span><span id="local-6989586621679040509"><span class="annot"><span class="annottext">RankedStates
 </span><a href="#local-6989586621679040509"><span class="hs-identifier hs-var">se</span></a></span></span><span class="hs-special">)</span><span> </span><span id="local-6989586621679040508"><span class="annot"><span class="annottext">Formula
 </span><a href="#local-6989586621679040508"><span class="hs-identifier hs-var">p</span></a></span></span><span>
-</span><span id="line-51"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">RankedModels -&gt; Bool
+</span><span id="line-51"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">RankedStates -&gt; Bool
 forall (t :: * -&gt; *) a. Foldable t =&gt; t a -&gt; Bool
-</span><span class="hs-identifier hs-var">null</span></span><span> </span><span class="annot"><span class="annottext">RankedModels
+</span><span class="hs-identifier hs-var">null</span></span><span> </span><span class="annot"><span class="annottext">RankedStates
 </span><a href="#local-6989586621679040509"><span class="hs-identifier hs-var">se</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">KnowledgeBase
 </span><a href="#local-6989586621679040506"><span class="hs-identifier hs-var">kb</span></a></span><span> </span><span class="annot"><span class="annottext">KnowledgeBase -&gt; Formula -&gt; Bool
 </span><a href="PropositionalLogic.html#entails"><span class="hs-operator hs-var">`entails`</span></a></span><span> </span><span class="annot"><span class="annottext">Formula -&gt; Formula
@@ -155,8 +155,8 @@ forall (t :: * -&gt; *) a. Foldable t =&gt; t a -&gt; Bool
 </span><a href="PropositionalLogic.html#entails"><span class="hs-operator hs-var">`entails`</span></a></span><span> </span><span class="annot"><span class="annottext">Formula -&gt; Formula
 </span><a href="PropositionalTypes.html#Not"><span class="hs-identifier hs-var">Not</span></a></span><span> </span><span class="annot"><span class="annottext">Formula
 </span><a href="#local-6989586621679040505"><span class="hs-identifier hs-var">ante</span></a></span><span>
-</span><span id="line-53"></span><span>    </span><span class="hs-keyword">then</span><span> </span><span class="annot"><span class="annottext">RankedModels -&gt; Formula -&gt; Bool
-</span><a href="DefeasibleHelpers.html#entailsRCAux"><span class="hs-identifier hs-var">entailsRCAux</span></a></span><span> </span><span class="annot"><span class="annottext">RankedModels
+</span><span id="line-53"></span><span>    </span><span class="hs-keyword">then</span><span> </span><span class="annot"><span class="annottext">RankedStates -&gt; Formula -&gt; Bool
+</span><a href="DefeasibleHelpers.html#entailsRCAux"><span class="hs-identifier hs-var">entailsRCAux</span></a></span><span> </span><span class="annot"><span class="annottext">RankedStates
 </span><a href="#local-6989586621679040509"><span class="hs-identifier hs-var">se</span></a></span><span> </span><span class="annot"><span class="annottext">Formula
 </span><a href="#local-6989586621679040508"><span class="hs-identifier hs-var">p</span></a></span><span>
 </span><span id="line-54"></span><span>    </span><span class="hs-keyword">else</span><span> </span><span class="annot"><span class="annottext">KnowledgeBase
@@ -168,9 +168,9 @@ forall (t :: * -&gt; *) a. Foldable t =&gt; t a -&gt; Bool
 </span><a href="#local-6989586621679040506"><span class="hs-identifier hs-var hs-var">kb</span></a></span></span><span>   </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[</span><span> </span><span class="annot"><span class="annottext">Formula
 </span><a href="#local-6989586621679040504"><span class="hs-identifier hs-var">q</span></a></span><span> </span><span class="hs-glyph">|</span><span> </span><span id="local-6989586621679040503"><span class="annot"><span class="annottext">KnowledgeBase
 </span><a href="#local-6989586621679040503"><span class="hs-identifier hs-var">r</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">KnowledgeBase
-</span><a href="#local-6989586621679040510"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="annot"><span class="annottext">KnowledgeBase -&gt; RankedModels -&gt; RankedModels
+</span><a href="#local-6989586621679040510"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="annot"><span class="annottext">KnowledgeBase -&gt; RankedStates -&gt; RankedStates
 forall a. a -&gt; [a] -&gt; [a]
-</span><span class="hs-glyph hs-var">:</span></span><span> </span><span class="annot"><span class="annottext">RankedModels
+</span><span class="hs-glyph hs-var">:</span></span><span> </span><span class="annot"><span class="annottext">RankedStates
 </span><a href="#local-6989586621679040509"><span class="hs-identifier hs-var">se</span></a></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679040504"><span class="annot"><span class="annottext">Formula
 </span><a href="#local-6989586621679040504"><span class="hs-identifier hs-var">q</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">KnowledgeBase
 </span><a href="#local-6989586621679040503"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="hs-special">]</span><span>
@@ -181,19 +181,19 @@ forall a. a -&gt; [a] -&gt; [a]
 </span><span id="line-58"></span><span>
 </span><span id="line-59"></span><span class="hs-comment">-- | The 'entailsLCAux' function is the auxiliary function for the 'entailsLC' function.</span><span>
 </span><span id="line-60"></span><span class="hs-comment">-- NOTE: This is a highly experimental function and its correctness has not been validated.</span><span>
-</span><span id="line-61"></span><span class="annot"><a href="DefeasibleHelpers.html#entailsLCAux"><span class="hs-identifier hs-type">entailsLCAux</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="DefeasibleTypes.html#RankedModels"><span class="hs-identifier hs-type">RankedModels</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="PropositionalTypes.html#Formula"><span class="hs-identifier hs-type">Formula</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Bool</span></span><span>
-</span><span id="line-62"></span><span id="entailsLCAux"><span class="annot"><span class="annottext">entailsLCAux :: RankedModels -&gt; Formula -&gt; Bool
+</span><span id="line-61"></span><span class="annot"><a href="DefeasibleHelpers.html#entailsLCAux"><span class="hs-identifier hs-type">entailsLCAux</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="DefeasibleTypes.html#RankedStates"><span class="hs-identifier hs-type">RankedStates</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="PropositionalTypes.html#Formula"><span class="hs-identifier hs-type">Formula</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Bool</span></span><span>
+</span><span id="line-62"></span><span id="entailsLCAux"><span class="annot"><span class="annottext">entailsLCAux :: RankedStates -&gt; Formula -&gt; Bool
 </span><a href="DefeasibleHelpers.html#entailsLCAux"><span class="hs-identifier hs-var hs-var">entailsLCAux</span></a></span></span><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span> </span><span id="local-6989586621679040501"><span class="annot"><span class="annottext">Formula
 </span><a href="#local-6989586621679040501"><span class="hs-identifier hs-var">p</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Formula -&gt; Bool
 </span><a href="PropositionalLogic.html#isValid"><span class="hs-identifier hs-var">isValid</span></a></span><span> </span><span class="annot"><span class="annottext">Formula
 </span><a href="#local-6989586621679040501"><span class="hs-identifier hs-var">p</span></a></span><span>
 </span><span id="line-63"></span><span class="annot"><a href="DefeasibleHelpers.html#entailsLCAux"><span class="hs-identifier hs-var">entailsLCAux</span></a></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679040500"><span class="annot"><span class="annottext">KnowledgeBase
-</span><a href="#local-6989586621679040500"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="annot"><span class="hs-glyph hs-type">:</span></span><span> </span><span id="local-6989586621679040499"><span class="annot"><span class="annottext">RankedModels
+</span><a href="#local-6989586621679040500"><span class="hs-identifier hs-var">s</span></a></span></span><span> </span><span class="annot"><span class="hs-glyph hs-type">:</span></span><span> </span><span id="local-6989586621679040499"><span class="annot"><span class="annottext">RankedStates
 </span><a href="#local-6989586621679040499"><span class="hs-identifier hs-var">se</span></a></span></span><span class="hs-special">)</span><span> </span><span id="local-6989586621679040498"><span class="annot"><span class="annottext">Formula
 </span><a href="#local-6989586621679040498"><span class="hs-identifier hs-var">p</span></a></span></span><span>
-</span><span id="line-64"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">RankedModels -&gt; Bool
+</span><span id="line-64"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">RankedStates -&gt; Bool
 forall (t :: * -&gt; *) a. Foldable t =&gt; t a -&gt; Bool
-</span><span class="hs-identifier hs-var">null</span></span><span> </span><span class="annot"><span class="annottext">RankedModels
+</span><span class="hs-identifier hs-var">null</span></span><span> </span><span class="annot"><span class="annottext">RankedStates
 </span><a href="#local-6989586621679040499"><span class="hs-identifier hs-var">se</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">KnowledgeBase
 </span><a href="#local-6989586621679040497"><span class="hs-identifier hs-var">kb</span></a></span><span> </span><span class="annot"><span class="annottext">KnowledgeBase -&gt; Formula -&gt; Bool
 </span><a href="PropositionalLogic.html#entails"><span class="hs-operator hs-var">`entails`</span></a></span><span> </span><span class="annot"><span class="annottext">Formula -&gt; Formula
@@ -204,8 +204,8 @@ forall (t :: * -&gt; *) a. Foldable t =&gt; t a -&gt; Bool
 forall (t :: * -&gt; *) a. Foldable t =&gt; t a -&gt; Bool
 </span><span class="hs-identifier hs-var">null</span></span><span> </span><span class="annot"><span class="annottext">KnowledgeBase
 </span><a href="#local-6989586621679040495"><span class="hs-identifier hs-var">selectedRefinement</span></a></span><span>
-</span><span id="line-66"></span><span>    </span><span class="hs-keyword">then</span><span> </span><span class="annot"><span class="annottext">RankedModels -&gt; Formula -&gt; Bool
-</span><a href="DefeasibleHelpers.html#entailsLCAux"><span class="hs-identifier hs-var">entailsLCAux</span></a></span><span> </span><span class="annot"><span class="annottext">RankedModels
+</span><span id="line-66"></span><span>    </span><span class="hs-keyword">then</span><span> </span><span class="annot"><span class="annottext">RankedStates -&gt; Formula -&gt; Bool
+</span><a href="DefeasibleHelpers.html#entailsLCAux"><span class="hs-identifier hs-var">entailsLCAux</span></a></span><span> </span><span class="annot"><span class="annottext">RankedStates
 </span><a href="#local-6989586621679040499"><span class="hs-identifier hs-var">se</span></a></span><span> </span><span class="annot"><span class="annottext">Formula
 </span><a href="#local-6989586621679040498"><span class="hs-identifier hs-var">p</span></a></span><span>
 </span><span id="line-67"></span><span>    </span><span class="hs-keyword">else</span><span> </span><span class="annot"><span class="annottext">KnowledgeBase
@@ -222,7 +222,7 @@ forall (t :: * -&gt; *) a. Foldable t =&gt; t a -&gt; Bool
 forall (t :: * -&gt; *) a. Foldable t =&gt; t a -&gt; Int
 </span><span class="hs-identifier hs-var">length</span></span><span> </span><span class="annot"><span class="annottext">KnowledgeBase
 </span><a href="#local-6989586621679040500"><span class="hs-identifier hs-var">s</span></a></span><span>
-</span><span id="line-71"></span><span>  </span><span id="local-6989586621679040492"><span class="annot"><span class="annottext">refinements :: RankedModels
+</span><span id="line-71"></span><span>  </span><span id="local-6989586621679040492"><span class="annot"><span class="annottext">refinements :: RankedStates
 </span><a href="#local-6989586621679040492"><span class="hs-identifier hs-var hs-var">refinements</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-72"></span><span>    </span><span class="hs-special">[</span><span> </span><span class="annot"><span class="annottext">KnowledgeBase
 </span><a href="#local-6989586621679040491"><span class="hs-identifier hs-var">stateComb</span></a></span><span>
@@ -233,28 +233,28 @@ forall a. [a] -&gt; [a]
 </span><span class="hs-number">1</span></span><span> </span><span class="hs-glyph">..</span><span> </span><span class="annot"><span class="annottext">Int
 </span><a href="#local-6989586621679040494"><span class="hs-identifier hs-var">stateLength</span></a></span><span class="hs-special">]</span><span>
 </span><span id="line-74"></span><span>    </span><span class="hs-special">,</span><span> </span><span id="local-6989586621679040491"><span class="annot"><span class="annottext">KnowledgeBase
-</span><a href="#local-6989586621679040491"><span class="hs-identifier hs-var">stateComb</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Int -&gt; KnowledgeBase -&gt; RankedModels
+</span><a href="#local-6989586621679040491"><span class="hs-identifier hs-var">stateComb</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Int -&gt; KnowledgeBase -&gt; RankedStates
 forall a. Int -&gt; [a] -&gt; [[a]]
 </span><a href="DefeasibleHelpers.html#combinations"><span class="hs-identifier hs-var">combinations</span></a></span><span> </span><span class="annot"><span class="annottext">Int
 </span><a href="#local-6989586621679040490"><span class="hs-identifier hs-var">i</span></a></span><span> </span><span class="annot"><span class="annottext">KnowledgeBase
 </span><a href="#local-6989586621679040500"><span class="hs-identifier hs-var">s</span></a></span><span>
 </span><span id="line-75"></span><span>    </span><span class="hs-special">]</span><span>
 </span><span id="line-76"></span><span>  </span><span id="local-6989586621679040495"><span class="annot"><span class="annottext">selectedRefinement :: KnowledgeBase
-</span><a href="#local-6989586621679040495"><span class="hs-identifier hs-var hs-var">selectedRefinement</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">RankedModels -&gt; KnowledgeBase
+</span><a href="#local-6989586621679040495"><span class="hs-identifier hs-var hs-var">selectedRefinement</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">RankedStates -&gt; KnowledgeBase
 forall a. [a] -&gt; a
 </span><span class="hs-identifier hs-var">head</span></span><span>
 </span><span id="line-77"></span><span>    </span><span class="hs-special">[</span><span> </span><span class="annot"><span class="annottext">KnowledgeBase
 </span><a href="#local-6989586621679040487"><span class="hs-identifier hs-var">state</span></a></span><span>
 </span><span id="line-78"></span><span>    </span><span class="hs-glyph">|</span><span> </span><span id="local-6989586621679040487"><span class="annot"><span class="annottext">KnowledgeBase
-</span><a href="#local-6989586621679040487"><span class="hs-identifier hs-var">state</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">RankedModels
+</span><a href="#local-6989586621679040487"><span class="hs-identifier hs-var">state</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">RankedStates
 </span><a href="#local-6989586621679040492"><span class="hs-identifier hs-var">refinements</span></a></span><span>
 </span><span id="line-79"></span><span>    </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">KnowledgeBase -&gt; Formula -&gt; Bool
 </span><a href="PropositionalLogic.html#entails"><span class="hs-identifier hs-var">entails</span></a></span><span> </span><span class="hs-special">[</span><span> </span><span class="annot"><span class="annottext">Formula
 </span><a href="#local-6989586621679040486"><span class="hs-identifier hs-var">q</span></a></span><span> </span><span class="hs-glyph">|</span><span> </span><span id="local-6989586621679040485"><span class="annot"><span class="annottext">KnowledgeBase
 </span><a href="#local-6989586621679040485"><span class="hs-identifier hs-var">r</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">KnowledgeBase
-</span><a href="#local-6989586621679040487"><span class="hs-identifier hs-var">state</span></a></span><span> </span><span class="annot"><span class="annottext">KnowledgeBase -&gt; RankedModels -&gt; RankedModels
+</span><a href="#local-6989586621679040487"><span class="hs-identifier hs-var">state</span></a></span><span> </span><span class="annot"><span class="annottext">KnowledgeBase -&gt; RankedStates -&gt; RankedStates
 forall a. a -&gt; [a] -&gt; [a]
-</span><span class="hs-glyph hs-var">:</span></span><span> </span><span class="annot"><span class="annottext">RankedModels
+</span><span class="hs-glyph hs-var">:</span></span><span> </span><span class="annot"><span class="annottext">RankedStates
 </span><a href="#local-6989586621679040499"><span class="hs-identifier hs-var">se</span></a></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679040486"><span class="annot"><span class="annottext">Formula
 </span><a href="#local-6989586621679040486"><span class="hs-identifier hs-var">q</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">KnowledgeBase
 </span><a href="#local-6989586621679040485"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="hs-special">]</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Formula -&gt; Formula
@@ -270,9 +270,9 @@ forall (t :: * -&gt; *) a. Foldable t =&gt; t a -&gt; Bool
 </span><a href="#local-6989586621679040497"><span class="hs-identifier hs-var hs-var">kb</span></a></span></span><span>           </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[</span><span> </span><span class="annot"><span class="annottext">Formula
 </span><a href="#local-6989586621679040483"><span class="hs-identifier hs-var">q</span></a></span><span> </span><span class="hs-glyph">|</span><span> </span><span id="local-6989586621679040482"><span class="annot"><span class="annottext">KnowledgeBase
 </span><a href="#local-6989586621679040482"><span class="hs-identifier hs-var">r</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">KnowledgeBase
-</span><a href="#local-6989586621679040495"><span class="hs-identifier hs-var">selectedRefinement</span></a></span><span> </span><span class="annot"><span class="annottext">KnowledgeBase -&gt; RankedModels -&gt; RankedModels
+</span><a href="#local-6989586621679040495"><span class="hs-identifier hs-var">selectedRefinement</span></a></span><span> </span><span class="annot"><span class="annottext">KnowledgeBase -&gt; RankedStates -&gt; RankedStates
 forall a. a -&gt; [a] -&gt; [a]
-</span><span class="hs-glyph hs-var">:</span></span><span> </span><span class="annot"><span class="annottext">RankedModels
+</span><span class="hs-glyph hs-var">:</span></span><span> </span><span class="annot"><span class="annottext">RankedStates
 </span><a href="#local-6989586621679040499"><span class="hs-identifier hs-var">se</span></a></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679040483"><span class="annot"><span class="annottext">Formula
 </span><a href="#local-6989586621679040483"><span class="hs-identifier hs-var">q</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">KnowledgeBase
 </span><a href="#local-6989586621679040482"><span class="hs-identifier hs-var">r</span></a></span><span> </span><span class="hs-special">]</span><span>

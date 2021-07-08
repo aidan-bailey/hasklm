@@ -27,7 +27,6 @@ data Formula
 -- | The 'KnowledgeBase' type encodes a propositional knowledge base.
 type KnowledgeBase = [Formula]
 
--- | The 'Show' instance for 'Formula'.
 instance Show Formula where
   show (Const True ) = "⊤"
   show (Const False) = "⊥"
@@ -38,7 +37,6 @@ instance Show Formula where
   show (Implies p q) = "(" ++ show p ++ "→" ++ show q ++ ")"
   show (Iff     p q) = "(" ++ show p ++ "↔" ++ show q ++ ")"
 
--- | The 'Eq' instance for 'Formula'.
 instance Eq Formula where
   (==) (Atom s1    ) (Atom s2    ) = s1 == s2
   (==) (Not  p     ) (Not  q     ) = p == q

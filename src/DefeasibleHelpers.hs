@@ -32,7 +32,7 @@ combinations n (x : xs) =
 -----------------
 
 -- | The 'baseRankAux' function is the auxiliary function for the 'baseRank' function.
-baseRankAux :: KnowledgeBase -> KnowledgeBase -> RankedModels -> RankedModels
+baseRankAux :: KnowledgeBase -> KnowledgeBase -> RankedStates -> RankedStates
 baseRankAux []  kb r = r ++ [kb]
 baseRankAux mkb kb r = baseRankAux result kb (r ++ [state])
  where
@@ -45,7 +45,7 @@ baseRankAux mkb kb r = baseRankAux result kb (r ++ [state])
   result = filter (`notElem` state) mkb
 
 -- | The 'entailsRCAux' function is the auxiliary function for the 'entailsRC' function.
-entailsRCAux :: RankedModels -> Formula -> Bool
+entailsRCAux :: RankedStates -> Formula -> Bool
 entailsRCAux [] p = isValid p
 entailsRCAux (s : se) p
   | null se = kb `entails` Not ante
@@ -58,7 +58,7 @@ entailsRCAux (s : se) p
 
 -- | The 'entailsLCAux' function is the auxiliary function for the 'entailsLC' function.
 -- NOTE: This is a highly experimental function and its correctness has not been validated.
-entailsLCAux :: RankedModels -> Formula -> Bool
+entailsLCAux :: RankedStates -> Formula -> Bool
 entailsLCAux [] p = isValid p
 entailsLCAux (s : se) p
   | null se = kb `entails` Not ante

@@ -139,11 +139,11 @@ module DefeasibleTypes
 data DefeasibleImplication
 Typically :: Formula -> Formula -> DefeasibleImplication
 
--- | The <a>State</a> type encodes a preferential <a>State</a>.
+-- | The <a>State</a> type encodes a preferential state.
 type State = [Formula]
 
--- | The <a>RankedModels</a> type encodes preferentially ranked models.
-type RankedModels = [State]
+-- | The <a>RankedStates</a> type encodes preferentially ranked models.
+type RankedStates = [State]
 
 -- | The <a>DefeasibleKnowledgeBase</a> type encodes a defeasible knowledge
 --   base.
@@ -168,22 +168,22 @@ combinations :: Int -> [a] -> [[a]]
 
 -- | The <a>baseRankAux</a> function is the auxiliary function for the
 --   <tt>baseRank</tt> function.
-baseRankAux :: KnowledgeBase -> KnowledgeBase -> RankedModels -> RankedModels
+baseRankAux :: KnowledgeBase -> KnowledgeBase -> RankedStates -> RankedStates
 
 -- | The <a>entailsRCAux</a> function is the auxiliary function for the
 --   <tt>entailsRC</tt> function.
-entailsRCAux :: RankedModels -> Formula -> Bool
+entailsRCAux :: RankedStates -> Formula -> Bool
 
 -- | The <a>entailsLCAux</a> function is the auxiliary function for the
 --   <tt>entailsLC</tt> function. NOTE: This is a highly experimental
 --   function and its correctness has not been validated.
-entailsLCAux :: RankedModels -> Formula -> Bool
+entailsLCAux :: RankedStates -> Formula -> Bool
 
 
 -- | Defeasible logic module
 module DefeasibleLogic
 
--- | The <tt>twiddle</tt> function takes in two propositional
+-- | The <a>typically</a> function takes in two propositional
 --   <a>Formula</a>s and returns a <a>DefeasibleImplication</a>. NOTE: This
 --   is a temporary function until a parser is built to handle this
 typically :: Formula -> DefeasibleImplication
@@ -192,9 +192,9 @@ typically :: Formula -> DefeasibleImplication
 --   <a>KnowledgeBase</a> for the given <a>DefeasibleKnowledgeBase</a>.
 materialise :: DefeasibleKnowledgeBase -> KnowledgeBase
 
--- | The <a>baseRank</a> function returns the <a>RankedModels</a> for the
+-- | The <a>baseRank</a> function returns the <a>RankedStates</a> for the
 --   given <a>JointKnowledgeBase</a>.
-baseRank :: JointKnowledgeBase -> RankedModels
+baseRank :: JointKnowledgeBase -> RankedStates
 
 -- | The <a>entailsRC</a> function returns whether or not the given
 --   <tt>DefeasibleInterpretation</tt> is defeasibly entailed (using

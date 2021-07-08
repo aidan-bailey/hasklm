@@ -5,7 +5,7 @@ import           DefeasibleHelpers
 import           DefeasibleTypes
 import           PropositionalTypes
 
--- | The 'twiddle' function takes in two propositional 'Formula's
+-- | The 'typically' function takes in two propositional 'Formula's
 -- and returns a 'DefeasibleImplication'.
 -- NOTE: This is a temporary function until a parser is built to handle this
 typically :: Formula -> DefeasibleImplication
@@ -17,8 +17,8 @@ materialise :: DefeasibleKnowledgeBase -> KnowledgeBase
 materialise []                    = []
 materialise (Typically p q : dkb) = Implies p q : materialise dkb
 
--- | The 'baseRank' function returns the 'RankedModels' for the given 'JointKnowledgeBase'.
-baseRank :: JointKnowledgeBase -> RankedModels
+-- | The 'baseRank' function returns the 'RankedStates' for the given 'JointKnowledgeBase'.
+baseRank :: JointKnowledgeBase -> RankedStates
 baseRank (kb, dkb) = baseRankAux (materialise dkb) kb []
 
 -- | The 'entailsRC' function returns whether or not the given 'DefeasibleInterpretation' is
