@@ -25,3 +25,9 @@ baseRank (kb, dkb) = baseRankAux (materialise dkb) kb []
 -- defeasibly entailed (using Rational Closure) by the given 'JointKnowledgeBase'.
 entailsRC :: JointKnowledgeBase -> DefeasibleImplication -> Bool
 entailsRC jkb p = entailsRCAux (baseRank jkb) (head (materialise [p]))
+
+-- | The 'entailsLC' function returns whether or not the given 'DefeasibleInterpretation' is
+-- defeasibly entailed (using Lexicographic Closure) by the given 'JointKnowledgeBase'.
+-- NOTE: This is a highly experimental function and it's correctness has not been validated.
+entailsLC :: JointKnowledgeBase -> DefeasibleImplication -> Bool
+entailsLC jkb p = entailsLCAux (baseRank jkb) (head (materialise [p]))
