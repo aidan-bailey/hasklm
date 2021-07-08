@@ -84,4 +84,4 @@ let defQuery2 = typically (str2form "penguin Implies wings")
 print (entailsRC jkb defQuery2)
 ```
 
-11. If the above outputs `False`, all is still well! Rational Closure would conclude through the some process that since penguin's are atypical birds that do not fly, penguins should not have wings either.
+11. If the above outputs `False`, all is still well! Rational Closure would conclude through the some process that since penguins are atypical birds that do not fly, penguins should not have wings either.
