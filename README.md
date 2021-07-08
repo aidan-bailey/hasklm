@@ -32,7 +32,13 @@ stack repl --only-main
 
 ```haskell
 let defRel1 = typically (str2form "bird Implies flies")
+```
+
+```haskell
 let defRel2 = typically (str2form "bird Implies wings")
+```
+
+```haskell
 let defRel3 = typically (str2form "penguin Implies Not flies")
 ```
 
@@ -46,6 +52,9 @@ let dkb = [defRel1, defRel2, defRel3]
 
 ```haskell
 let propForm1 = str2form "penguin Implies bird"
+```
+
+```haskell
 let propForm2 = str2form "Robin Implies bird"
 ```
 
