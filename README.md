@@ -17,7 +17,7 @@ Examples of defeasible entailment checking, using Rational Closure, can be found
 
 Here is a more detailed example:
 
-**Example**
+**RationalClosure Example**
 
 This example will be in reference to the [birds and penguins](https://projects.cs.uct.ac.za/honsproj/cgi-bin/view/2019/morris_ross.zip/images/comic-penguins-strip.png) classical reasoning problem.
 

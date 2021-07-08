@@ -38,3 +38,14 @@ leakyboatRCTest = do
   let jkb   = (kb, dkb)
   let query = typically (str2form "FlyingDutchman Implies Not floats")
   entailsRC jkb query
+
+penguinLCTest = do
+  let dkb =
+        [ typically (str2form "b Implies f")
+        , typically (str2form "p Implies Not f")
+        , typically (str2form "b Implies w")
+        ]
+  let kb = [str2form "p Implies b", str2form "R Implies b"]
+  let jkb   = (kb, dkb)
+  let query = typically (str2form "p Implies w")
+  entailsLC jkb query
