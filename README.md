@@ -9,18 +9,17 @@ Checkout the [docs](https://github.com/aidanjbailey/hasklm/tree/master/docs) for
 The most commonly used commands are described below.
 
 - Build Package: `stack build`
-- Load Library into GHCi (Testing): `stack repl`
+- Load Library into GHCi (For Development/Testing purposes): `stack repl`
 - Run Tests: `stack test`
 - Use Application: `stack repl --only-main`
 
-An example of defeasible entailment checking using Rational Closure can be found in the [test file](https://github.com/aidanjbailey/hasklm/blob/master/test/MyLibTest.hs) within the `rationalClosureTest` function.
+Examples of defeasible entailment checking, using Rational Closure, can be found in the [test file](https://github.com/aidanjbailey/hasklm/blob/master/test/MyLibTest.hs).
 
-Here is a more detailed description:
+Here is a more detailed example:
 
 **Example**
 
-This example will provide a solution to the [birds and penguins](https://projects.cs.uct.ac.za/honsproj/cgi-bin/view/2019/morris_ross.zip/images/comic-penguins-strip.png) classical reasoning problem.
-We'll use the extended version of this example just to show that Rational Closure is working (to some perceived extent).
+This example will be in reference to the [birds and penguins](https://projects.cs.uct.ac.za/honsproj/cgi-bin/view/2019/morris_ross.zip/images/comic-penguins-strip.png) classical reasoning problem.
 
 1. Load the Application.
 
@@ -73,7 +72,7 @@ let defQuery = typically (str2form "penguin Implies bird")
 print (entailsRC jkb defQuery)
 ```
 
-9. If the above outputted `True`, all is well, and we have concluded a penguin is still a bird. For interest sake, we will define another defeasible query.
+9. If the above outputs `True`, all is well! A penguin is still a bird! For interests sake, we will define another defeasible query.
 
 ```haskell
 let defQuery2 = typically (str2form "penguin Implies wings")
@@ -85,4 +84,4 @@ let defQuery2 = typically (str2form "penguin Implies wings")
 print (entailsRC jkb defQuery2)
 ```
 
-11. If the above outputted `False`, all is still well, as Rational Closure would conclude along with penguins not being able to fly, that penguins do not have wings either.
+11. If the above outputs `False`, all is still well! Rational Closure would conclude through the some process that since penguin's are atypical birds that do not fly, penguins should not have wings either.
