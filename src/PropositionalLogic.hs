@@ -54,7 +54,7 @@ models kb = [ v | v <- valuations kb, and [ v `satisfies` p | p <- kb ] ]
 
 -- | The 'isSatisfiable' function returns the satisfiability of the given 'KnowledgeBase'.
 isSatisfiable :: KnowledgeBase -> Bool
-isSatisfiable kb = not null models kb
+isSatisfiable kb = not (null (models kb))
 
 -- | The 'entails' function returns whether or not the given 'KnowledgeBase' entails the given 'Formula'.
 entails :: KnowledgeBase -> Formula -> Bool
