@@ -5,7 +5,8 @@ on: push
 jobs:
   build-and-test:
 
-    runs-on: koellewe/haskell-stack:2.7.1
+    runs-on: ubuntu-latest
+    container: koellewe/haskell-stack:2.7.1
 
     steps:
     - name: Build
