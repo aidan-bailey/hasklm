@@ -9,7 +9,11 @@ jobs:
     container: koellewe/haskell-stack:2.7.1
 
     steps:
-    - run: "chown -R $(id -un):$(id -gn) ~"
+    - name: Checkout code
+      uses: actions/checkout@v2
+    
+    - name: Permissions bug workaround
+      run: "chown -R $(id -un):$(id -gn) ~"
     
     - name: Build
       run: stack --allow-different-user build
