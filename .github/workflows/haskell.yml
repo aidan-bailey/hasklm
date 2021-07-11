@@ -10,6 +10,11 @@ jobs:
 
     steps:
     - name: Build
-      run: stack --stack-root $PWD/.stack build
+      run: stack build
+      env: # stack perm bug workaround
+        TAR_OPTIONS: --no-same-owner
+
     - name: Run tests
-      run: stack --stack-root $PWD/.stack test
+      run: stack test
+      env:
+        TAR_OPTIONS: --no-same-owner
