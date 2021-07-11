@@ -9,10 +9,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - uses: actions/setup-haskell@v1
-      with:
-        ghc-version: '8.10.3'
-        cabal-version: '3.2'
+    - name: Install Haskell
+      run: apt install haskell-platform
         
     - name: Install stack
       run: curl -sSL https://get.haskellstack.org/ | sh
