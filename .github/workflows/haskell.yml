@@ -9,8 +9,10 @@ jobs:
     container: koellewe/haskell-stack:2.7.1
 
     steps:
+    - run: "chown -R $(id -un):$(id -gn) ~"
+    
     - name: Build
-      run: TAR_OPTIONS=--no-same-owner stack build
+      run: stack --allow-different-user build
 
     - name: Run tests
-      run: TAR_OPTIONS=--no-same-owner stack test
+      run: stack --allow-different-user test
