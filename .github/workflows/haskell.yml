@@ -10,6 +10,6 @@ jobs:
 
     steps:
     - name: Build
-      run: stack build
+      run: stack --stack-root $PWD/.stack build
     - name: Run tests
-      run: stack test
+      run: stack --stack-root $PWD/.stack test
