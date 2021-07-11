@@ -10,11 +10,7 @@ jobs:
 
     steps:
     - name: Build
-      run: stack build
-      env: # stack perm bug workaround
-        TAR_OPTIONS: --no-same-owner
+      run: TAR_OPTIONS=--no-same-owner stack build
 
     - name: Run tests
-      run: stack test
-      env:
-        TAR_OPTIONS: --no-same-owner
+      run: TAR_OPTIONS=--no-same-owner stack test
