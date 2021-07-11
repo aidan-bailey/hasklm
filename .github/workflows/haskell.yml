@@ -16,7 +16,7 @@ jobs:
       run: "chown -R $(id -un):$(id -gn) ~"
     
     - name: Build
-      run: stack --allow-different-user build
+      run: stack build
 
     - name: Run tests
-      run: stack --allow-different-user test
+      run: stack test
