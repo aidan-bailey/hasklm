@@ -1,0 +1,22 @@
+name: Haskell CI
+
+on: push
+
+jobs:
+  build-and-test:
+
+    runs-on: ubuntu-latest
+    container: koellewe/haskell-stack:2.7.1
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    
+    - name: Permissions bug workaround
+      run: "chown -R $(id -un):$(id -gn) ~"
+    
+    - name: Build
+      run: stack --allow-different-user build
+
+    - name: Run tests
+      run: stack --allow-different-user test
